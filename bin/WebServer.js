@@ -74,13 +74,18 @@ function WebServer(...args) {
 
     function VerifySSL() {
         try {
-            if (config.isRunHttps && fs.existsSync(config.sslKeyPath) && fs.existsSync(config.sslPemPath)) {
-                const sslOption = {
-                    key: fs.readFileSync(config.sslKeyPath),
-                    cert: fs.readFileSync(config.sslPemPath)
-                };
+            if (config.isRunHttps) {
+                Log.Print(Log.Level.Info, _this.name, '准备创建HTTPS服务器');
 
-                _this.webServer = https.createServer(sslOption, expServer);
+                if (fs.existsSync(config.sslKeyPath) && fs.existsSync(config.sslPemPath)) {
+                    const sslOption = {
+                        key: fs.readFileSync(config.sslKeyPath),
+                        cert: fs.readFileSync(config.sslPemPath)
+                    };
+
+                    _this.webServer = https.createServer(sslOption, expServer);
+
+                } else { Log.Print(Log.Level.Warning, _this.name, 'SSL证书文件不存在'); }
             }
         } catch (e) {
             Log.Print(Log.Level.Warning, _this.name, '读取SSL证书失败，无法启动HTTPS！');

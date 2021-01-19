@@ -8,7 +8,7 @@ module.exports = {
 
     isRelease: false,
     isOnLinux: false,
-    isRunHttps: true,
+    isRunHttps: false,
 
     sslKeyPath: path.join(__dirname, '../private/www.ctcc.online.key'),
     sslPemPath: path.join(__dirname, '../private/www.ctcc.online.pem'),
