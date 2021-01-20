@@ -1,0 +1,1 @@
+nodemon ../Main.js

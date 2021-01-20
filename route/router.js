@@ -1,8 +1,6 @@
 const express = require('express');
-const Util = require('../service/xhLibB');
-
-const Log = Util.Log;
-const config = Util.config;
+const Log = require('../lib/xhLibB').Log;
+const config = require('../lib/xhLibB').config;
 
 let name = "Router";
 let router = express();
