@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../..//public/image/favicon.ico">
+    <link rel="icon" href="../../public/image/favicon.ico">
     <link rel="stylesheet" href="../../public/css/normalize.css">
     <link rel="stylesheet" href="../../public/css/base.css">
     <script src="../../public/lib/jquery.min.js"></script>
@@ -16,6 +16,7 @@
 <body>
 
     <header>
+        <!-- 页面顶部 -->
         <div class="page_top">
             <div class="gn_box">
                 <div class="fl">
@@ -30,10 +31,11 @@
                 </div>
                 <div class="fr">
                     <div class="cart fl">
-                        <a href="#" target="_blank"></a>
+                        <a href="#"></a>
+                        <!-- <a href="#" target="_blank"></a> -->
                     </div>
                     <div class="search fr">
-                        <form action="" method="get">
+                        <form action="#" method="get">
                             <input type="text" name="keyword" class="txt_search" placeholder="请输入关键字">
                             <input type="submit" class="submit_search">
                         </form>
@@ -43,8 +45,48 @@
                 <div class="clear"></div>
             </div>
         </div>
+
+        <!-- 顶部导航栏 -->
         <div class="navigation_top">
-
-
+            <div class="gn_box menu">
+                <ul class="fl page_menu" id="pageMenu">
+                    <li><a href="/index">首页</a></li>
+                    <li><a href="/product/libary">产品中心</a> </li>
+                    <li><a href="/service/appraisal">细胞服务</a>
+                        <div class="child_menu">
+                            <ul>
+                                <li><a href="/service/preservation">细胞保藏</a></li>
+                                <li><a href="/service/customized">细胞定制</a></li>
+                                <li><a href="/service/appraisal">细胞鉴定</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/support/reference">技术支持</a>
+                        <div class="child_menu">
+                            <ul>
+                                <li><a href="/support/reference">技术资料</a></li>
+                                <li><a href="/support/question">常见问题</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/about/introduce">关于我们</a>
+                        <div class="child_menu">
+                            <ul>
+                                <li><a href="/about/introduce">公司简介</a></li>
+                                <li><a href="/about/job">人才招聘</a></li>
+                                <li><a href="/about/contact">联系我们</a></li>
+                                <li><a href="/about/news">新闻动态</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/sale/activity">促销活动</a></li>
+                </ul>
+                <ul class="fr user_menu">
+                    <li><a href="#"><img src="../../public/image/btn/user_login.png"><span>登录</span></a></li>
+                    <li><a href="#"><img src="../../public/image/btn/user_registe.png"><span>注册</span></a></li>
+                    <li><a href="#"><img src="../../public/image/btn/user_msg.png"><span>在线留言</span></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
         </div>
     </header>

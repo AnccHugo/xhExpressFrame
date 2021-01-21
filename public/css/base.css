@@ -11,7 +11,7 @@ header, footer {
 }
 
 body {
-    /* overflow: auto; */
+    overflow: auto;
 }
 
 /*  */
@@ -69,6 +69,7 @@ header .page_top {
 
 .page_top .cart {
     float: right;
+    margin-top: 5px;
 }
 
 .page_top .cart a {
@@ -119,11 +120,11 @@ header .page_top {
 
 .page_top .search form .submit_search {
     background: url('../image/btn/search.png') no-repeat;
-    width: 14px;
+    width: 24px;
     line-height: 24px;
     cursor: pointer;
     color: #fff;
-    /* text-indent: -999px; */
+    text-indent: -999px;
 }
 
 /*  */
@@ -133,6 +134,81 @@ header .page_top {
 header .navigation_top {
     min-height: 30px;
     background-color: rgba(66, 166, 166, 1);
+}
+
+.navigation_top .menu {
+    width: 1200px;
+}
+
+.navigation_top .menu li {
+    position: relative;
+    float: left;
+    margin: 0;
+}
+
+.navigation_top .menu li a {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fffefe;
+    padding: 8px 16px;
+}
+
+.navigation_top .menu li a img {
+    padding-right: 5px;
+}
+
+.navigation_top .menu .page_menu li:hover, .menu .user_menu li:hover a {
+    color: rgba(27, 27, 27, 0.808);
+    background-color: rgba(213, 216, 216, 0.3);
+    transition: all .5s;
+}
+
+.navigation_top .menu .page_menu li:hover {
+    background-color: rgba(31, 103, 107, 0.5);
+}
+
+.navigation_top .menu .page_menu .child_menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 35px;
+    left: -35px;
+    width: auto;
+    margin-left: 35px;
+    overflow: hidden;
+    background-color: #fff;
+    -moz-box-shadow: 0 2px 5px #888;
+    -webkit-box-shadow: 0 2px 5px #888;
+    box-shadow: 0 2px 5px #888;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.navigation_top .menu .page_menu .child_menu ul {
+    text-align: center;
+}
+
+.navigation_top .menu .page_menu .child_menu ul li {
+    position: relative;
+    width: 100%;
+    margin: 0px;
+}
+
+.navigation_top .menu .page_menu .child_menu ul li a {
+    display: block;
+    color: #333;
+    background: none;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: none;
+    /* text-align: left; */
+}
+
+.navigation_top .menu .page_menu li:hover .child_menu {
+    display: block;
 }
 
 /*  */
