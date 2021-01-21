@@ -1,0 +1,175 @@
+/*  */
+
+/*  */
+
+/*  */
+
+/* Common Style */
+
+header, footer {
+    width: 100%;
+}
+
+body {
+    /* overflow: auto; */
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* Header Style */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 21;
+    background-color: #fff;
+}
+
+/*  */
+
+/* 页面最顶部 */
+
+header .page_top {
+    min-height: 50px;
+    margin-top: 5px;
+}
+
+.page_top .logo {
+    float: left;
+}
+
+.page_top .logo img {
+    width: 30px;
+}
+
+.page_top .slogan {
+    float: left;
+    border: 1px dashed rgba(66, 166, 166, 1);
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+.page_top .slogan p {
+    line-height: 15px;
+    font-size: 13px;
+    padding: 3px 9px;
+    font-family: 'MicrosoftYaHei', '黑体', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    color: rgba(66, 166, 166, 1);
+}
+
+.page_top .slogan p>span {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.page_top .cart {
+    float: right;
+}
+
+.page_top .cart a {
+    position: relative;
+    display: block;
+    margin-left: 30px;
+    width: 70px;
+}
+
+.page_top .cart a::before {
+    position: absolute;
+    content: "";
+    top: 2px;
+    width: 32px;
+    height: 32px;
+    background: url('../image/btn/cart.png') no-repeat;
+}
+
+.page_top .search {
+    float: right;
+    width: 235px;
+    height: 30px;
+    border: 1px dashed rgba(66, 166, 166, 1);
+    border-radius: 14px;
+    padding: 2px;
+    margin-top: 5px;
+}
+
+.page_top .search form {
+    position: relative;
+    margin-top: 3px;
+}
+
+.page_top .search input {
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.page_top .search form .txt_search {
+    color: rgba(119, 119, 119);
+    width: 195px;
+    height: 24px;
+    border-radius: 14px;
+    padding-left: 10px;
+    font-family: '微软雅黑';
+}
+
+.page_top .search form .submit_search {
+    background: url('../image/btn/search.png') no-repeat;
+    width: 14px;
+    line-height: 24px;
+    cursor: pointer;
+    color: #fff;
+    /* text-indent: -999px; */
+}
+
+/*  */
+
+/* 顶部导航 */
+
+header .navigation_top {
+    min-height: 30px;
+    background-color: rgba(66, 166, 166, 1);
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* Footer Style */
+
+footer {}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* General Style */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.gn_box {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
