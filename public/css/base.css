@@ -219,7 +219,85 @@ header .navigation_top {
 
 /* Footer Style */
 
-footer {}
+footer {
+    width: 100%;
+    background-color: rgba(66, 166, 166, 1);
+    background-size: auto;
+    padding: 25px 0;
+    min-width: 1200px;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+footer .company_info {
+    margin-top: 11px;
+    overflow: hidden;
+}
+
+.company_info p, .company_info p a {
+    color: #ffffff !important;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.company_info .company_copyright1, .company_info .company_copyright2 {
+    font-weight: bolder;
+}
+
+.company_info .links_friendly {
+    margin-top: 15px;
+}
+
+.company_info .site_beian {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.company_info .site_beian img {
+    height: 20px;
+    width: 20px;
+}
+
+/*  */
+
+/* 二维码矩阵 */
+
+footer .erweima {
+    margin-top: 20px;
+}
+
+.erweima .qrcode {
+    float: right;
+    padding-right: 20px;
+}
+
+.erweima .qrcode img {
+    width: 120px;
+    height: 120px;
+    margin-right: 0px;
+}
+
+.erweima .qrcode p {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* 内容页 */
+
+content {
+    display: block;
+    min-height: 800px;
+    margin-top: 90px;
+}
 
 /*  */
 
