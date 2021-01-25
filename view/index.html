@@ -11,7 +11,7 @@
     <!-- S === Banner === S  -->
     <div class="banner">
         <div class="flex-viewport">
-            <ul class="slides">
+            <ul id="bannerView" class="slides">
                 <li class="active"><a href="#"><img src="../public/image/banner/tu-1.png" alt="美森细胞"
                             draggable="false"></a>
                 </li>
@@ -24,7 +24,7 @@
             </ul>
         </div>
 
-        <ol class="flex-control-nav flex-control-paging">
+        <ol id="bannerControl" class="flex-control-nav flex-control-paging">
             <li class="active"><a>1</a></li>
             <li><a>2</a></li>
             <li><a>3</a></li>
@@ -32,8 +32,8 @@
         </ol>
 
         <ul class="flex-direction-nav">
-            <li id="flexPrev"><a class="flex-prev"></a></li>
-            <li id="flexNext"><a class="flex-next"></a></li>
+            <li id="bannerPrev"><a class="flex-prev"></a></li>
+            <li id="bannerNext"><a class="flex-next"></a></li>
         </ul>
     </div>
     <!-- E === Banner === E  -->
