@@ -471,6 +471,10 @@ content .rexiaoxibao {}
     font-weight: bold;
 }
 
+.rexiaoxibao .cell_list a:hover .pro_text h3 {
+    color: rgba(66, 166, 166, 1);
+}
+
 /*  */
 
 /*  */
