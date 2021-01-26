@@ -53,15 +53,15 @@ function xhTimer(fn, t) {
 /**
  * @name xhLunbotu
  * @description 小何轮播图控件
- * @param {Object} $imgView 对象·视窗对象
- * @param {Object} $controller 对象·控制图序
- * @param {Object} $prev 对象·前一张图片
- * @param {Object} $next 对象·后一张图片
+ * @param {Object} $imgView 列表·图片视窗对象
+ * @param {Object} $controller 列表·图序控制按钮
+ * @param {Object} $prev 按钮·前一张图片控制按钮
+ * @param {Object} $next 按钮·后一张图片控制按钮
  */
 function xhLunbotu($imgView, $controller = null, $prev = null, $next = null) {
     if (!$imgView) { console.error("视图错误!"); return; }
 
-    var _t = 3000;          // 当前轮询间隔
+    var _t = 5000;          // 当前轮询间隔
     var _this = this;       // 轮播图对象指针
     var _curIdx = 0;        // 当前图片索引
     var lunbotuTimer = new xhTimer(_Next, _t);   // 创建轮播图定时器：默认使用淡入淡出特效
@@ -85,8 +85,12 @@ function xhLunbotu($imgView, $controller = null, $prev = null, $next = null) {
     // ========== ========== ===========
 
     function _Init() {
+        // 前后按钮
         if ($prev) { $($prev).on('click', _Prev); }
         if ($next) { $($next).on('click', _Next); }
+
+        // 图序按钮
+        if ($controller) { _Controller();}
 
         _this.StartAuto();
     }
@@ -99,6 +103,15 @@ function xhLunbotu($imgView, $controller = null, $prev = null, $next = null) {
     function _Prev() {
         if (--_curIdx < 0) { _curIdx = $($imgView).length - 1; }
         _RunAnimation();
+    }
+
+    function _Controller() {
+        $($controller).each(function (idx, ele) {
+            $(ele).on('click', function () {
+                _curIdx = idx;
+                _RunAnimation();
+            });
+        });
     }
 
     function _RunAnimation() {
@@ -124,3 +137,14 @@ function xhLunbotu($imgView, $controller = null, $prev = null, $next = null) {
     // 自动初始化
     _Init();
 };
+
+
+
+
+
+
+
+
+
+
+

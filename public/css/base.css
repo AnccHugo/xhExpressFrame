@@ -134,6 +134,7 @@ header .page_top {
 header .navigation_top {
     min-height: 30px;
     background-color: rgba(66, 166, 166, 1);
+    box-shadow: 0px 3px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
 .navigation_top .menu {
@@ -296,7 +297,7 @@ footer .erweima {
 content {
     display: block;
     min-height: 800px;
-    margin-top: 90px;
+    margin-top: 89px;
 }
 
 /*  */
