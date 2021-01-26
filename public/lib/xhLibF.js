@@ -5,9 +5,9 @@
  * @param {Number} t 定时器执行间隔 
  */
 function xhTimer(fn, t) {
+    var _this = this;
     var t = parseInt(t) ? parseInt(t) : 3000;
     var _timerObj = setInterval(fn, t);
-
 
 
     // ========== ========== ===========
@@ -38,7 +38,7 @@ function xhTimer(fn, t) {
     this.Reset = function (newIntervalTime) {
         t = parseInt(newIntervalTime) ? parseInt(newIntervalTime) : t;
 
-        return this.Stop().Start();
+        return _this.Stop().Start();
     };
 
 
@@ -77,6 +77,9 @@ function xhLunbotu($imgView, $controller = null, $prev = null, $next = null) {
 
     // 开启自动轮播
     this.StartAuto = lunbotuTimer.Start;
+
+    // 重置定时器
+    this.SetInterval = lunbotuTimer.Reset;
 
 
 

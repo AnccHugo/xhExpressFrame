@@ -166,6 +166,75 @@ content .banner {
 
 /* 热销品类 */
 
+content .rexiaopinlei {
+    margin-left: 40px;
+    margin-right: 45px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.rexiaopinlei h1 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 32px;
+    padding-left: 10px;
+}
+
+.rexiaopinlei h1 img {
+    border: none;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: bottom;
+}
+
+.rexiaopinlei .product_list {
+    width: 100%;
+    overflow: hidden;
+}
+
+.rexiaopinlei .product_list li {
+    float: left;
+    width: 22.5%;
+    margin-right: 2%;
+    overflow: hidden;
+}
+
+.rexiaopinlei .product_list li .pro_img {
+    overflow: hidden;
+}
+
+.rexiaopinlei .product_list li .pro_img img {
+    width: -8%;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+}
+
+.rexiaopinlei .product_list li:hover img {
+    transform: scale(1.15);
+}
+
+.rexiaopinlei .product_list li .pro_text {
+    text-align: center;
+    padding-top: 15px;
+    line-height: 24px;
+    color: #666;
+}
+
+.rexiaopinlei .product_list li:hover .pro_text {
+    color: rgba(66, 166, 166, 1);
+}
+
+.rexiaopinlei .product_list li .pro_text h3 {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.rexiaopinlei .product_list li .pro_text p {
+    font-size: 12px;
+}
+
 /*  */
 
 /*  */
@@ -173,6 +242,8 @@ content .banner {
 /*  */
 
 /* 特色推荐 */
+
+content .tesetuijian {}
 
 /*  */
 
@@ -182,6 +253,8 @@ content .banner {
 
 /* 热销细胞 */
 
+content .rexiaoxibao {}
+
 /*  */
 
 /*  */
@@ -190,6 +263,8 @@ content .banner {
 
 /* 动态&资源  */
 
+content .dongtai_ziyuan {}
+
 /*  */
 
 /*  */
@@ -197,3 +272,5 @@ content .banner {
 /*  */
 
 /* 关于我们 */
+
+content .guanyuwomen {}
