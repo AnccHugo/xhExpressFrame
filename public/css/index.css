@@ -164,16 +164,16 @@ content .banner {
 
 /*  */
 
-/* 热销品类 */
+/* 通用 */
 
-content .rexiaopinlei {
+content .gn_box {
     margin-left: 40px;
     margin-right: 45px;
     font-size: 14px;
     margin: 0 auto;
 }
 
-.rexiaopinlei h1 {
+content .gn_box h1 {
     margin-top: 50px;
     margin-bottom: 30px;
     position: relative;
@@ -181,11 +181,26 @@ content .rexiaopinlei {
     padding-left: 10px;
 }
 
-.rexiaopinlei h1 img {
+content .gn_box h1 img {
     border: none;
     line-height: 0;
     font-size: 0;
     vertical-align: bottom;
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* 热销品类 */
+
+content .rexiaopinlei {
+    margin-left: 40px;
+    margin-right: 45px;
+    font-size: 14px;
+    margin: 0 auto;
 }
 
 .rexiaopinlei .product_list {
@@ -243,7 +258,152 @@ content .rexiaopinlei {
 
 /* 特色推荐 */
 
-content .tesetuijian {}
+content .tesetuijian {
+    font-size: 14px;
+}
+
+.tesetuijian .product_tuijian {
+    width: 100%;
+    background-color: rgba(66, 166, 166, 1);
+    margin-bottom: 40px;
+}
+
+.tesetuijian .product_menu {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tesetuijian .product_menu li {
+    position: relative;
+    display: inline-block;
+    width: 22%;
+    line-height: 40px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    margin-left: 1%;
+    margin-right: 1%;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.tesetuijian .product_menu li.active {
+    color: #000;
+    background-color: #fff;
+}
+
+.tesetuijian .product_menu li span {
+    left: 10px;
+    top: 2px;
+}
+
+.tesetuijian .product_content {
+    padding-bottom: 40px;
+    color: #fff;
+}
+
+.tesetuijian .product_content li {
+    display: none;
+    width: 83%;
+    margin: auto;
+}
+
+.tesetuijian .product_content li.active {
+    display: block;
+}
+
+.tesetuijian .product_content li a {
+    /* display: inline-block; */
+}
+
+.tesetuijian .product_content img {
+    width: 50%;
+    max-width: 100%;
+}
+
+.tesetuijian .product_content .content_text {
+    float: right;
+    /* display: inline-block; */
+    width: 45%;
+}
+
+.tesetuijian .product_content .content_text h3 {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.tesetuijian .product_content .content_text h3 a {
+    color: #fff;
+}
+
+.tesetuijian .product_content .content_text p {
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.tesetuijian .product_content .content_text p span {
+    font-size: 14px;
+    line-height: 28px;
+    padding-right: 15px;
+}
+
+.tesetuijian .product_content .content_text .text_desc {
+    color: #fff;
+}
+
+.tesetuijian .product_content .content_text .text_desc h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tesetuijian .product_content .content_text .text_desc dl {
+    min-height: 130px;
+}
+
+.tesetuijian .product_content .content_text .text_desc dl dd {
+    position: relative;
+    font-size: 12px;
+    line-height: 25px;
+    padding-left: 15px;
+}
+
+.tesetuijian .product_content .content_text .text_desc dl dd::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #f9a93b;
+    left: 0px;
+    content: "";
+    border-radius: 50%;
+    top: 9px;
+}
+
+.tesetuijian .product_content .content_text .text_desc a {
+    position: relative;
+    display: block;
+    line-height: 25px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.tesetuijian .product_content .content_text .text_desc a span {
+    position: relative;
+}
+
+.tesetuijian .product_content .content_text .text_desc a span::before {
+    position: absolute;
+    content: "";
+    background: url('../image/icon/more.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    left: -23px;
+    top: -1px;
+}
 
 /*  */
 
