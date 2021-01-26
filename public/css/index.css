@@ -173,7 +173,7 @@ content .gn_box {
     margin: 0 auto;
 }
 
-content .gn_box h1 {
+content .gn_box h2 {
     margin-top: 50px;
     margin-bottom: 30px;
     position: relative;
@@ -181,11 +181,16 @@ content .gn_box h1 {
     padding-left: 10px;
 }
 
-content .gn_box h1 img {
+content .gn_box h2 img {
     border: none;
     line-height: 0;
     font-size: 0;
     vertical-align: bottom;
+    margin-right: 5px;
+}
+
+a {
+    color: #666;
 }
 
 /*  */
@@ -340,6 +345,10 @@ content .tesetuijian {
     color: #fff;
 }
 
+.tesetuijian .product_content .content_text h3 a:hover {
+    text-decoration: underline;
+}
+
 .tesetuijian .product_content .content_text p {
     font-size: 14px;
     line-height: 28px;
@@ -391,6 +400,10 @@ content .tesetuijian {
     margin-top: 15px;
 }
 
+.tesetuijian .product_content .content_text .text_desc:hover {
+    text-decoration: underline;
+}
+
 .tesetuijian .product_content .content_text .text_desc a span {
     position: relative;
 }
@@ -414,6 +427,49 @@ content .tesetuijian {
 /* 热销细胞 */
 
 content .rexiaoxibao {}
+
+.rexiaoxibao .cell_list {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.rexiaoxibao .cell_list a {
+    color: #666;
+}
+
+.rexiaoxibao .cell_list li {
+    width: 22.5%;
+    float: left;
+    margin-right: 2%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.rexiaoxibao .cell_list li .pro_img {
+    overflow: hidden;
+}
+
+.rexiaoxibao .cell_list li .pro_img img {
+    width: 100%;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+}
+
+.rexiaoxibao .cell_list li:hover img {
+    transform: scale(1.15);
+}
+
+.rexiaoxibao .cell_list li .pro_text {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.rexiaoxibao .cell_list li .pro_text h3 {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+}
 
 /*  */
 
