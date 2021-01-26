@@ -189,7 +189,7 @@ content .gn_box h2 img {
     margin-right: 5px;
 }
 
-a {
+content .gn_box a {
     color: #666;
 }
 
@@ -480,6 +480,67 @@ content .rexiaoxibao {}
 /* 动态&资源  */
 
 content .dongtai_ziyuan {}
+
+.dongtai_ziyuan .new_left {
+    width: 25%;
+    float: left;
+    overflow: hidden;
+}
+
+.dongtai_ziyuan .new_left a img {
+    max-width: 100%;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+}
+
+.dongtai_ziyuan .new_left a:hover img {
+    transform: scale(1.15);
+}
+
+.dongtai_ziyuan .new_right {
+    width: 70%;
+    float: left;
+    margin-left: 5%;
+}
+
+.dongtai_ziyuan .link_list {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.dongtai_ziyuan .link_list li {
+    float: left;
+    width: 30%;
+    padding-right: 2%;
+    padding-top: 25px;
+}
+
+.dongtai_ziyuan .link_list li img {
+    float: left;
+    margin-right: 10px;
+}
+
+.dongtai_ziyuan .link_list li .link_text {
+    padding-top: 6px;
+}
+
+.dongtai_ziyuan .link_list li .link_text h3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.dongtai_ziyuan .link_list li .link_text h3:hover {
+    text-decoration: underline;
+}
+
+.dongtai_ziyuan .link_list li .link_text p {
+    line-height: 24px;
+    font-size: 14px;
+}
 
 /*  */
 
