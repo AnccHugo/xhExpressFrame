@@ -588,7 +588,43 @@ content .guanyuwomen {
 
 .guanyuwomen .about_text a {
     padding: 9px 54px;
-    background: #4a8d90;
+    background: rgba(66, 166, 166, 1);
     color: #ffffff;
     font-size: 14px;
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* 服务保障 */
+
+content .fuwubaozhang {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f7f8fa;
+}
+
+.fuwubaozhang .serve_list {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.fuwubaozhang .serve_list li {
+    float: left;
+    width: 20%;
+    margin: 30px 0px;
+    color: #696969;
+    text-align: center;
+}
+
+.fuwubaozhang .serve_list li img {
+    /* float: left; */
+}
+
+.fuwubaozhang .serve_list li p {
+    padding-top: 10px;
 }
