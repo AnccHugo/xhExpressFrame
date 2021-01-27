@@ -554,4 +554,41 @@ content .dongtai_ziyuan {}
 
 /* 关于我们 */
 
-content .guanyuwomen {}
+content .guanyuwomen {
+    /* width: 100%; */
+    min-height: 100px;
+    background-color: #f7f8fa;
+    margin: 50px auto;
+}
+
+.guanyuwomen .about_img {
+    float: left;
+    width: 45%;
+}
+
+.guanyuwomen .about_text {
+    float: right;
+    width: 51%;
+    margin-top: 50px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    color: #333333;
+}
+
+.guanyuwomen .about_text h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.guanyuwomen .about_text p {
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.guanyuwomen .about_text a {
+    padding: 9px 54px;
+    background: #4a8d90;
+    color: #ffffff;
+    font-size: 14px;
+}
