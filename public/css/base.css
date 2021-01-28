@@ -14,7 +14,7 @@ body {
     overflow: auto;
 }
 
-.content {
+content, .content {
     min-height: 800px;
     margin-top: 90px;
 }
@@ -302,7 +302,7 @@ footer .erweima {
 content {
     display: block;
     min-height: 800px;
-    margin-top: 89px;
+    margin-top: 90px;
 }
 
 /*  */

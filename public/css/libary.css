@@ -1,0 +1,115 @@
+/*  */
+
+/*  */
+
+/*  */
+
+/* 通用样式 */
+
+content .libary .tabs_common {
+    position: relative;
+    border-bottom: 1px solid #c3ddde;
+    padding: 5px 0;
+}
+
+.libary .tab_title {
+    position: absolute;
+    top: 10px;
+    color: #4c4c4c;
+}
+
+.tab_title strong {
+    font-weight: bolder;
+}
+
+.tab_body {
+    min-height: 30px;
+    padding-top: 5px;
+    padding-left: 80px;
+}
+
+.tab_body .tab_list {
+    overflow: hidden;
+}
+
+.tab_body .tab_list li {
+    float: left;
+    display: block;
+    position: relative;
+    margin: 0px 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+.tab_body .tab_list li a {
+    text-decoration: none;
+    color: #666;
+}
+
+.tab_body .tab_list li a.label {
+    display: block;
+    padding: 5px;
+}
+
+.tab_body .tab_list li a.label:hover {
+    color: red;
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/* 产品库 */
+
+content .libary {
+    margin: 30px auto;
+    margin-top: 120px;
+    padding: 30px 20px;
+    font-size: 14px;
+    background: #eff8f9;
+}
+
+/*  */
+
+/*  */
+
+/* 产品索引 */
+
+.libary .pro_index {
+    padding: 15px 20px 30px 20px;
+    font-size: 14px;
+    background: #eff8f9;
+    margin-bottom: 15px;
+}
+
+.pro_index>h1 {
+    height: 36px;
+    color: #de0707;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+.pro_index>h1 em {
+    font-size: 24px;
+}
+
+.pro_pinyin .tab_body .tab_list li {
+    margin: 0 0 12px 12px;
+}
+
+.pro_pinyin .tab_body .tab_list li a.label {
+    width: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+/*  */
+
+/*  */
+
+/* 产品列表 */
+
+.libary .pro_list {}
