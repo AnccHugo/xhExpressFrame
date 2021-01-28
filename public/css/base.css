@@ -19,6 +19,11 @@ content, .content {
     margin-top: 90px;
 }
 
+content a {
+    text-decoration: none;
+    color: #666;
+}
+
 /*  */
 
 /*  */
