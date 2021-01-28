@@ -3,7 +3,7 @@ const path = require('path');
 
 
 module.exports = {
-    domain: "localhost",
+    domain: "0.0.0.0",
     webPort: 80,
 
     isRelease: false,
