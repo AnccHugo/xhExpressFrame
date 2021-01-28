@@ -112,8 +112,6 @@ content .libary {
 
 /* 产品列表 */
 
-.libary .pro_list {}
-
 .pro_list table {
     width: 100%;
     text-align: left;
@@ -128,6 +126,11 @@ content .libary {
     font-weight: bolder;
     text-align: left;
     background: #f7f7f7;
+    cursor: default;
+}
+
+.pro_list table tbody tr:hover {
+    background-color: #f7f7f7;
 }
 
 .pro_list table tbody td {
@@ -149,4 +152,43 @@ content .libary {
 
 .pro_list table tbody td:nth-child(2) a:hover {
     text-decoration: underline;
+}
+
+/*  */
+
+/*  */
+
+/* 分页器 */
+
+.libary .pro_paging {
+    line-height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.pro_paging a, .pro_paging span {
+    padding: 5px;
+    margin-right: 2px;
+    border: 1px #CCCCCC solid;
+    cursor: pointer;
+}
+
+.pro_paging a {
+    text-decoration: none;
+    color: #666;
+}
+
+.pro_paging a:hover {
+    border: 1px #999999 solid;
+    background: #FFFFCD;
+}
+
+.pro_paging a.active {
+    border: 1px #999999 solid;
+    background: #FFFFCD;
+    font-weight: bold;
 }
