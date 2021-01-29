@@ -3,6 +3,7 @@ const Log = require('../lib/xhLibB').Log;
 const Time = require('../lib/xhLibB').Time;
 const config = require('../lib/xhLibB').config;
 const rBase = require('./rBase');
+const rUser = require('./rUser');
 const rSale = require('./rSale');
 const rAbout = require('./rAbout');
 const rServe = require('./rServe');
@@ -38,6 +39,8 @@ router.use((req, res, next) => {
 
 // 加载二级路由和默认路由
 router.use(rBase);
+router.use('/base', rBase);
+router.use('/user', rUser);
 router.use('/sale', rSale);
 router.use('/about', rAbout);
 router.use('/service', rServe);

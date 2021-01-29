@@ -7,12 +7,180 @@
 /* 用户界面 */
 
 .mask_user {
-    /* display: none; */
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 999999;
-    background-color: rgba(0, 0, 0, 0.3ss);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mask_user .user_box {
+    position: absolute;
+    top: 18%;
+    left: 38%;
+    width: 320px;
+    height: 300px;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.08), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+/*  */
+
+/*  */
+
+/* 用户盒子切换标签 */
+
+.mask_user .user_box .user_tab {
+    width: 100%;
+    display: inline-block;
+}
+
+.user_box .user_tab li {
+    float: left;
+    width: 40%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+}
+
+.user_box .user_tab li:first-child {
+    text-align: right;
+    padding-right: 10%;
+}
+
+.user_box .user_tab li:last-child {
+    text-align: left;
+}
+
+.user_box .user_tab li.active {
+    color: #119786;
+}
+
+/*  */
+
+/*  */
+
+/* 用户盒子 通用 */
+
+.user_box label {
+    float: left;
+    width: 35px;
+    height: 32px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #adadad;
+    background: url('../image/icon/user.png') no-repeat;
+}
+
+.user_box input {
+    float: right;
+    width: 245px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+    border: none;
+    outline: none;
+}
+
+.user_box input::placeholder {
+    color: #ababab;
+    opacity: 1;
+}
+
+.user_box .text_user {
+    width: 300px;
+    height: 32px;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid #adadad;
+}
+
+/*  */
+
+/*  */
+
+/* 登录盒子 */
+
+.mask_user .user_box .user_login {
+    margin-top: 10px;
+}
+
+.user_login .text_user .lbl_email {
+    background-position: 4px 4px;
+}
+
+.user_login .text_user .lbl_password {
+    background-position: 8px -27px;
+}
+
+.user_login .checkcode {
+    overflow: hidden;
+    width: 302px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.user_login .checkcode .checkcode_num {
+    float: left;
+    width: 135px;
+    height: 32px;
+    margin-right: 20px;
+    border: 1px solid #adadad;
+}
+
+.user_login .checkcode .checkcode_num .txt_checkcode {
+    width: 115px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+    border: none;
+    outline: none;
+}
+
+.user_login .checkcode .checkcode_img {
+    float: left;
+    width: 110px;
+    height: 32px;
+}
+
+.user_login .checkcode .checkcode_img img {
+    max-width: 100%;
+    max-height: 34px;
+}
+
+.user_login .forgetpwd {
+    float: left;
+    padding-right: 10px;
+}
+
+.user_login .forgetpwd a {
+    display: block;
+    padding: 2px 10px;
+    font-size: 13px;
+    color: #f1000099;
+    cursor: pointer;
+}
+
+.user_login .btn_login {
+    float: left;
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.user_login .btn_login a {
+    background: linear-gradient(to left, #35b78d, #1da9af);
+    color: #fff;
+    padding: 8px 125px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
 }

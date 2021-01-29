@@ -3,19 +3,55 @@
 
 <!-- S === 用户界面遮罩 === S -->
 <div class="mask_user">
+    <div class="user_box">
+        <ul class="user_tab">
+            <li class="to_login active">账号登录</li>
+            <li class="to_registe">邮箱注册</li>
+        </ul>
 
-    <!-- S === 产品索引 === S -->
-    <div class="user_login">
+        <!-- S === 用户登录 === S -->
+        <div class="user_login">
+            <form id="formUserLogin" method="post">
+                <!-- 用户邮箱 -->
+                <div class="text_user">
+                    <label class="lbl_email"></label>
+                    <input type="text" id="txtEmail" class="txt_email" autofocus="autofocus" value="" placeholder="邮箱"
+                        name="email" autocomplete="off">
+                </div>
 
+                <!-- 用户密码 -->
+                <div class="text_user">
+                    <label class="lbl_password"></label>
+                    <input type="password" id="txtPassword" class="txt_password" autofocus="autofocus" value=""
+                        placeholder="密码" name="password" autocomplete="off">
+                </div>
+
+                <!-- 验证码 -->
+                <div class="checkcode">
+                    <div class="checkcode_num">
+                        <input type="text" id="txtCheckcode" class="txt_checkcode" autofocus="autofocus" value=""
+                            placeholder="验证码" name="checkcode" autocomplete="off">
+                    </div>
+                    <div class="checkcode_img">
+                        <img id="imgCheckcode" src="https://www.procell.com.cn/index.php?m=Home&c=Member&a=verify">
+                    </div>
+                </div>
+
+                <!-- 忘记密码 -->
+                <div class="forgetpwd"><a>忘记密码？</a></div>
+
+                <!-- 登录账号 -->
+                <div class="btn_login"><a class="a_login" href="javascript:void(0);" name="sbtbutton">登 录</a></div>
+            </form>
+        </div>
+        <!-- E === 用户登录 === E -->
+
+        <!-- S === 用户注册 === S -->
+        <div class="user_registe">
+
+        </div>
+        <!-- E === 用户注册 === E -->
     </div>
-    <!-- E === 产品索引 === E -->
-
-    <!-- S === 产品索引 === S -->
-    <div class="user_registe">
-
-    </div>
-    <!-- E === 产品索引 === E -->
-
 </div>
 <!-- E === 用户界面遮罩 === E -->
 
