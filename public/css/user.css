@@ -29,6 +29,16 @@
     box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.08), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+.mask_user .click_off {
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    padding: 1px 8px;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 /*  */
 
 /*  */
