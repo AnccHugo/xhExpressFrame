@@ -333,6 +333,18 @@ content {
     overflow: hidden;
 }
 
+.clearfix {
+    display: block;
+}
+
+.clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 .gn_box {
     position: relative;
     width: 1200px;

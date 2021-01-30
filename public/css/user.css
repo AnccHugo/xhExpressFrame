@@ -21,7 +21,7 @@
     position: absolute;
     top: 18%;
     left: 38%;
-    width: 320px;
+    width: 360px;
     height: 300px;
     padding: 20px 40px;
     background-color: #fff;
@@ -61,7 +61,7 @@
 
 .user_box .user_tab li:first-child {
     text-align: right;
-    padding-right: 10%;
+    padding-right: 15%;
 }
 
 .user_box .user_tab li:last-child {
@@ -119,6 +119,7 @@
 /* 登录盒子 */
 
 .mask_user .user_box .user_login {
+    display: none;
     margin-top: 10px;
 }
 
@@ -165,6 +166,10 @@
     max-height: 34px;
 }
 
+.user_login .checkcode .checkcode_img:hover {
+    cursor: pointer;
+}
+
 .user_login .forgetpwd {
     float: left;
     padding-right: 10px;
@@ -172,7 +177,7 @@
 
 .user_login .forgetpwd a {
     display: block;
-    padding: 2px 10px;
+    padding: 5px 30px;
     font-size: 13px;
     color: #f1000099;
     cursor: pointer;
@@ -193,4 +198,67 @@
     border-radius: 20px;
     font-size: 14px;
     cursor: pointer;
+}
+
+/*  */
+
+/*  */
+
+/* 注册盒子 */
+
+.mask_user .user_box .user_registe {
+    display: none;
+    margin-top: 20px;
+    line-height: 50px;
+}
+
+.user_registe form label {
+    float: left;
+    width: auto;
+    height: auto;
+    line-height: revert;
+    /* padding-right: 20px; */
+    font-size: 14px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    -webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+}
+
+.user_registe form label em {
+    margin-right: 8px;
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.user_registe form .line2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.user_registe form .line2 input {
+    float: none;
+    border: 1px solid #adadad;
+    outline: none;
+    width: 240px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+    font-size: 12px;
+}
+
+.user_registe form .liney {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.user_registe form .liney a {
+    padding: 8px 98px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(to left, #35b78d, #1da9af);
 }
