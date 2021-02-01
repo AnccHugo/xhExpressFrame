@@ -21,6 +21,18 @@ module.exports = {
             passwod: "ctcc123..",
             database: "ctcc",
         }
-    }
+    },
+
+    mailFrom:'俊景科技<jjwlkj@aliyun.com>',
+    mailSender: {
+        host: 'smtp.aliyun.com',
+        port: 465,
+        auth: {
+            user: 'jjwlkj@aliyun.com',
+            pass:'jUNjING999...'
+        }
+    },
+
+
 
 };
