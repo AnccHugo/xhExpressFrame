@@ -10,8 +10,11 @@ const express_art_template = require('express-art-template');
 
 function WebServer() {
     const srvConfig = {
-        port: config.webPort,
-        domain: config.domain,
+        port: config.webPort ? config.webPort: 8081,
+        domain: config.domain ? config.domain: '0.0.0.0',
+        isRunHttps: config.isRunHttps ? config.isRunHttps : false,
+        sslKeyPath: config.sslKeyPath ? config.sslKeyPath : false,
+        sslPemPath: config.sslPemPath ? config.sslPemPath : false,
     };
 
     let webServer = new xhWebServer(srvConfig);
