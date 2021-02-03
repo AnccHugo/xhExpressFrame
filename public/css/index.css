@@ -7,6 +7,7 @@
 /* Banner */
 
 content .banner {
+    min-width: 1200px;
     margin: 0 0 60px;
     background: #fff;
     border: 4px solid #fff;
@@ -45,7 +46,7 @@ content .banner {
 .banner .slides li {
     display: block;
     float: left;
-    width: 99.3vw;
+    /* width: 99.3vw; */
     margin: 0 auto;
     -webkit-backface-visibility: hidden;
 }
@@ -242,7 +243,7 @@ content .rexiaopinlei {
 }
 
 .rexiaopinlei .product_list li:hover .pro_text {
-    color: rgba(66, 166, 166, 1);
+    color: rgba(82, 134, 202, 1);
 }
 
 .rexiaopinlei .product_list li .pro_text h3 {
@@ -269,7 +270,8 @@ content .tesetuijian {
 
 .tesetuijian .product_tuijian {
     width: 100%;
-    background-color: rgba(66, 166, 166, 1);
+    background-color: rgb(74, 137, 219);
+    /* background-color: rgba(82, 134, 202, 1); */
     margin-bottom: 40px;
 }
 
@@ -398,6 +400,7 @@ content .tesetuijian {
     line-height: 25px;
     text-align: right;
     margin-top: 15px;
+    color: #eee;
 }
 
 .tesetuijian .product_content .content_text .text_desc:hover {
@@ -472,7 +475,7 @@ content .rexiaoxibao {}
 }
 
 .rexiaoxibao .cell_list a:hover .pro_text h3 {
-    color: rgba(66, 166, 166, 1);
+    color: rgba(82, 134, 202, 1);
 }
 
 /*  */
@@ -588,7 +591,7 @@ content .guanyuwomen {
 
 .guanyuwomen .about_text a {
     padding: 9px 54px;
-    background: rgba(66, 166, 166, 1);
+    background: rgba(82, 134, 202, 1);
     color: #ffffff;
     font-size: 14px;
 }
@@ -602,6 +605,7 @@ content .guanyuwomen {
 /* 服务保障 */
 
 content .fuwubaozhang {
+    min-width: 1200px;
     width: 100%;
     margin: 0 auto;
     background-color: #f7f8fa;

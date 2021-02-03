@@ -58,7 +58,7 @@ header .page_top {
 
 .page_top .slogan {
     float: left;
-    border: 1px dashed rgba(66, 166, 166, 1);
+    border: 1px dashed rgba(82, 134, 202, 1);
     border-radius: 5px;
     margin-left: 25px;
 }
@@ -69,7 +69,7 @@ header .page_top {
     padding: 3px 9px;
     font-family: 'MicrosoftYaHei', '黑体', 'Courier New', Courier, monospace;
     font-weight: 400;
-    color: rgba(66, 166, 166, 1);
+    color: rgba(82, 134, 202, 1);
 }
 
 .page_top .slogan p>span {
@@ -102,7 +102,7 @@ header .page_top {
     float: right;
     width: 235px;
     height: 30px;
-    border: 1px dashed rgba(66, 166, 166, 1);
+    border: 1px dashed rgba(82, 134, 202, 1);
     border-radius: 14px;
     padding: 2px;
     margin-top: 5px;
@@ -143,7 +143,7 @@ header .page_top {
 
 header .navigation_top {
     min-height: 30px;
-    background-color: rgba(66, 166, 166, 1);
+    background-color: rgba(82, 134, 202, 1);
     box-shadow: 0px 3px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -232,7 +232,7 @@ header .navigation_top {
 
 footer {
     width: 100%;
-    background-color: rgba(66, 166, 166, 1);
+    background-color: rgba(82, 134, 202, 1);
     background-size: auto;
     padding: 25px 0;
     min-width: 1200px;
@@ -242,6 +242,7 @@ footer {
 
 footer .company_info {
     margin-top: 11px;
+    margin-left: 10px;
     overflow: hidden;
 }
 
