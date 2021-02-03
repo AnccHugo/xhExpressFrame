@@ -1,6 +1,6 @@
 const config = {
     // 站点标题
-    siteTitle: "杭州美森细胞生物科技有限公司",
+    siteTitle: "浙江美森细胞科技有限公司",
 
     // 各种开关
     isRelease: false,
