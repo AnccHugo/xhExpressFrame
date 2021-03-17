@@ -1,9 +1,10 @@
+const os = require('os');
 const path = require('path');
 
 
 
 module.exports = {
-    domain: "0.0.0.0",
+    domain: os.hostname || "0.0.0.0",
     webPort: 81,
 
     isRelease: false,
