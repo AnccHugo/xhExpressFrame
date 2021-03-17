@@ -1,8 +1,11 @@
 /*  */
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* 用户界面 */
 
@@ -39,9 +42,12 @@
     cursor: pointer;
 }
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* 用户盒子切换标签 */
 
@@ -72,9 +78,12 @@
     color: #119786;
 }
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* 用户盒子 通用 */
 
@@ -112,9 +121,12 @@
     border: 1px solid #adadad;
 }
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* 登录盒子 */
 
@@ -200,9 +212,12 @@
     cursor: pointer;
 }
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* 注册盒子 */
 
@@ -261,4 +276,133 @@
     cursor: pointer;
     border-radius: 20px;
     background: linear-gradient(to left, #35b78d, #1da9af);
+}
+
+
+/*  */
+
+
+/*  */
+
+
+/* 用户留言板 */
+
+.user_liuyan {
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+/*  */
+
+
+/* 公共部分 */
+
+.user_liuyan .liuyan_box {
+    height: auto;
+    width: auto;
+}
+
+.user_liuyan .liuyan_box .relativeD {
+    position: relative;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.liuyan_box .relativeD .name_title {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.liuyan_box .relativeD span {
+    position: relative;
+    padding-left: 12px;
+}
+
+.liuyan_box .relativeD span em {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    color: red;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.liuyan_box .relativeD input {
+    height: 35px;
+    width: 40%;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    line-height: normal;
+    border: 1px solid #D3DDE9;
+    padding: 2px 5px;
+    -moz-appearance: textfield;
+    -webkit-appearance: none !important;
+}
+
+.liuyan_box .relativeD textarea {
+    height: 100px;
+    width: 40%;
+    padding: 2px 5px;
+    margin-top: 10px;
+    line-height: normal;
+    border: 1px solid #D3DDE9;
+    resize: none;
+    color: #333;
+}
+
+
+/*  */
+
+
+/* 各模块 */
+
+.liuyan_box .liuyan_title {
+    width: 100px;
+    padding: 5px;
+    margin: 10px auto;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    background: #068965;
+    cursor: default;
+}
+
+.liuyan_box .liuyan_desc {
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.liuyan_box .relativeD .verify_code {
+    width: 20%;
+    margin-top: 20px;
+}
+
+.liuyan_box .relativeD .check_cum_img {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.liuyan_box .relativeD .check_cum_img img {
+    width: 120px;
+    vertical-align: middle;
+    margin-left: 20px;
+    max-height: 35px;
+}
+
+.liuyan_box .relativeD button {
+    width: 41%;
+    height: 42px;
+    background: #05956f;
+    color: #fff;
+    font-size: 16px;
+    line-height: 43px;
+    border: 0 none;
+    border-bottom: 3px solid #047154;
+    margin-left: 45px;
+    margin-top: 20px;
+    cursor: pointer;
 }
