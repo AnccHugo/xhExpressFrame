@@ -10,19 +10,19 @@
 /* 关于我们 */
 
 .content .about_us {
-    /* border-left: 2px solid #f2f2f2; */
     width: 938px;
-    padding-left: 32px;
-    padding-bottom: 40px;
     min-height: 450px;
     margin: 0 auto;
+    padding-left: 32px;
+    padding-bottom: 40px;
+    /* border-left: 2px solid #f2f2f2; */
 }
 
-.content .about_us .section {
+.about_us .section {
     margin-top: 40px;
 }
 
-.content .about_us .section a {
+.about_us .section a {
     color: #056f77;
 }
 
@@ -65,24 +65,24 @@
     font-size: 15px;
 }
 
-.part1 .pic_con {
+.about_us .part1 .pic_con {
     float: left;
     width: 40%;
 }
 
-.part1 .txt_con {
+.about_us .part1 .txt_con {
     float: left;
     width: 60%;
 }
 
-.part1 .txt_con p {
+.about_us .part1 .txt_con p {
     margin-left: 4%;
     margin-bottom: 7px;
     line-height: 26px;
     text-indent: 2em;
 }
 
-.part1 .pic_con img {
+.about_us .part1 .pic_con img {
     margin-right: 5%;
     margin-top: 1%;
 }
@@ -93,23 +93,23 @@
 
 /* 模块2 */
 
-.part2 .txt_con {
+.about_us .part2 .txt_con {
     float: left;
     width: 55%;
 }
 
-.part2 .txt_con ul {
+.about_us .part2 .txt_con ul {
     margin-top: 25px;
     font-size: 15px;
 }
 
-.part2 .txt_con ul li {
+.about_us .part2 .txt_con ul li {
     position: relative;
     padding-left: 25px;
     margin-bottom: 10px;
 }
 
-.part2 .txt_con li::before {
+.about_us .part2 .txt_con li::before {
     content: "";
     display: block;
     position: absolute;
@@ -126,7 +126,7 @@
 
 /* 模块8 */
 
-.part8 .culture {
+.about_us .part8 .culture {
     width: 100%;
     overflow: hidden;
     text-align: center;
@@ -136,7 +136,7 @@
     padding-left: 2%;
 }
 
-.part8 .culture li {
+.about_us .part8 .culture li {
     float: left;
     width: 22%;
     display: inline-block;
@@ -145,14 +145,14 @@
     padding: 1%;
 }
 
-.part8 .culture li h3 {
+.about_us .part8 .culture li h3 {
     font-size: 16px;
     margin-bottom: 10px;
     color: #4a8d90;
     font-weight: bold;
 }
 
-.part8 .culture li p {
+.about_us .part8 .culture li p {
     line-height: 24px;
 }
 
@@ -162,6 +162,112 @@
 
 /* 模块4 */
 
-.part4>div img {
+.about_us .part4>div img {
     margin: 30px auto;
+}
+
+
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+
+/* 联系我们 */
+
+.content .contact_us {
+    width: 938px;
+    min-height: 450px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-bottom: 40px;
+    /* border-left: 2px solid #f2f2f2; */
+}
+
+.contact_us .section {
+    margin-top: 60px;
+}
+
+.contact_us .section .tit {
+    font-size: 20px;
+    background: #e3f2f5;
+    padding: 10px 0;
+    padding-left: 34px;
+    color: #000;
+}
+
+.contact_us .section table {
+    border-collapse: collapse;
+    cursor: default;
+}
+
+.contact_us .section table td {
+    padding: 5px !important;
+    border-color: #666666 !important;
+}
+
+.contact_us a {
+    color: #056f77;
+    font-size: large;
+    text-decoration: underline;
+    margin: 20px;
+}
+
+
+/* 模块1 */
+
+.contact_us .part1 {
+    margin: 48px 0;
+    overflow: hidden;
+    margin-bottom: 62px;
+    font-size: 14px;
+}
+
+.contact_us .part1 table td {
+    line-height: 24px;
+    font-size: 14px;
+    color: #585858;
+}
+
+.contact_us .part1 table td img {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.contact_us .part1 table td h3 {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    color: #333;
+}
+
+
+/* 模块2 */
+
+.contact_us .part2 table {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.contact_us .part2 table td {
+    padding: 15px 12px !important;
+    font-size: 14px;
+}
+
+.contact_us .part2 table img {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.contact_us .part2 table tr:nth-child(2n+1) td {
+    background: #f7f7f7;
+}
+
+.contact_us .part2 table caption {
+    padding: 18px 0;
+    font-size: 14px;
 }
