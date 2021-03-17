@@ -1,0 +1,167 @@
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+
+/* 关于我们 */
+
+.content .about_us {
+    /* border-left: 2px solid #f2f2f2; */
+    width: 938px;
+    padding-left: 32px;
+    padding-bottom: 40px;
+    min-height: 450px;
+    margin: 0 auto;
+}
+
+.content .about_us .section {
+    margin-top: 40px;
+}
+
+.content .about_us .section a {
+    color: #056f77;
+}
+
+.about_us .section .tit {
+    padding: 10px;
+    font-size: 20px;
+    color: rgba(82, 134, 202, 1);
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.about_us .section .tit span {
+    top: 4px;
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.about_us .section>div {
+    overflow: hidden;
+    margin: 18px 0;
+    margin-left: 3.5%;
+    margin-bottom: 0;
+    margin-top: 30px;
+    /* text-align: center; */
+}
+
+.about_us .section>div img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/*  */
+
+
+/* 模块1 */
+
+.about_us .part1 {
+    font-size: 15px;
+}
+
+.part1 .pic_con {
+    float: left;
+    width: 40%;
+}
+
+.part1 .txt_con {
+    float: left;
+    width: 60%;
+}
+
+.part1 .txt_con p {
+    margin-left: 4%;
+    margin-bottom: 7px;
+    line-height: 26px;
+    text-indent: 2em;
+}
+
+.part1 .pic_con img {
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+
+/*  */
+
+
+/* 模块2 */
+
+.part2 .txt_con {
+    float: left;
+    width: 55%;
+}
+
+.part2 .txt_con ul {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.part2 .txt_con ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.part2 .txt_con li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 23px;
+    height: 20px;
+    background: url('../image/about/icon7.jpg') no-repeat;
+}
+
+
+/*  */
+
+
+/* 模块8 */
+
+.part8 .culture {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 20px;
+    padding-left: 2%;
+}
+
+.part8 .culture li {
+    float: left;
+    width: 22%;
+    display: inline-block;
+    border-right: 2px solid #4a8d90;
+    min-height: 115px;
+    padding: 1%;
+}
+
+.part8 .culture li h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #4a8d90;
+    font-weight: bold;
+}
+
+.part8 .culture li p {
+    line-height: 24px;
+}
+
+
+/*  */
+
+
+/* 模块4 */
+
+.part4>div img {
+    margin: 30px auto;
+}
