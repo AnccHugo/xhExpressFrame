@@ -1,12 +1,16 @@
 /*  */
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* Common Style */
 
-header, footer {
+header,
+footer {
     width: 100%;
 }
 
@@ -14,7 +18,8 @@ body {
     overflow: auto;
 }
 
-content, .content {
+content,
+.content {
     min-height: 800px;
     margin-top: 90px;
 }
@@ -24,11 +29,15 @@ content a {
     color: #666;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* Header Style */
 
@@ -39,7 +48,9 @@ header {
     background-color: #fff;
 }
 
+
 /*  */
+
 
 /* 页面最顶部 */
 
@@ -138,7 +149,9 @@ header .page_top {
     text-indent: -999px;
 }
 
+
 /*  */
+
 
 /* 顶部导航 */
 
@@ -170,7 +183,8 @@ header .navigation_top {
     padding-right: 5px;
 }
 
-.navigation_top .menu .page_menu li:hover, .menu .user_menu li:hover a {
+.navigation_top .menu .page_menu li:hover,
+.menu .user_menu li:hover a {
     color: rgba(27, 27, 27, 0.808);
     background-color: rgba(213, 216, 216, 0.3);
     transition: all .5s;
@@ -223,11 +237,15 @@ header .navigation_top {
     display: block;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* Footer Style */
 
@@ -247,14 +265,16 @@ footer .company_info {
     overflow: hidden;
 }
 
-.company_info p, .company_info p a {
+.company_info p,
+.company_info p a {
     color: #ffffff !important;
     font-size: 12px;
     line-height: 24px;
     text-align: left;
 }
 
-.company_info .company_copyright1, .company_info .company_copyright2 {
+.company_info .company_copyright1,
+.company_info .company_copyright2 {
     font-weight: bolder;
 }
 
@@ -272,7 +292,9 @@ footer .company_info {
     width: 20px;
 }
 
+
 /*  */
+
 
 /* 二维码矩阵 */
 
@@ -298,11 +320,15 @@ footer .erweima {
     text-align: center;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 内容页 */
 
@@ -312,11 +338,15 @@ content {
     margin-top: 90px;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* General Style */
 

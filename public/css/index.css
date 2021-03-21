@@ -1,8 +1,11 @@
 /*  */
 
-/*  */
 
 /*  */
+
+
+/*  */
+
 
 /* Banner */
 
@@ -46,7 +49,7 @@ content .banner {
 .banner .slides li {
     display: block;
     float: left;
-    /* width: 99.3vw; */
+    width: 99.3vw;
     margin: 0 auto;
     -webkit-backface-visibility: hidden;
 }
@@ -61,7 +64,9 @@ content .banner {
     width: 100%;
 }
 
+
 /*  */
+
 
 /* 图序按钮 */
 
@@ -73,7 +78,9 @@ content .banner {
     bottom: 4%;
 }
 
-.slides, .flex-control-nav, .flex-direction-nav {
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -126,7 +133,9 @@ content .banner {
     background-color: #48f4f7;
 }
 
+
 /*  */
+
 
 /* 前后按钮 */
 
@@ -159,11 +168,15 @@ content .banner {
     z-index: 10;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 通用 */
 
@@ -194,11 +207,15 @@ content .gn_box a {
     color: #666;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 热销品类 */
 
@@ -256,11 +273,15 @@ content .rexiaopinlei {
     font-size: 12px;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 特色推荐 */
 
@@ -421,11 +442,15 @@ content .tesetuijian {
     top: -1px;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 热销细胞 */
 
@@ -478,11 +503,15 @@ content .rexiaoxibao {}
     color: rgba(82, 134, 202, 1);
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 动态&资源  */
 
@@ -549,11 +578,15 @@ content .dongtai_ziyuan {}
     font-size: 14px;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 关于我们 */
 
@@ -596,11 +629,15 @@ content .guanyuwomen {
     font-size: 14px;
 }
 
-/*  */
 
 /*  */
 
+
 /*  */
+
+
+/*  */
+
 
 /* 服务保障 */
 
