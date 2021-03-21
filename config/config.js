@@ -24,16 +24,42 @@ module.exports = {
         }
     },
 
-    mailFrom:'俊景科技<jjwlkj@aliyun.com>',
+
+    companyEmail: "俊景科技<jjwlkj@aliyun.com>",
+    mailSenderProxy: {
+        host: 'smtp.aliyun.com',
+        port: 465,
+        auth: {
+            user: 'jjwlkj@aliyun.com',
+            pass: 'jUNjING999..'
+        }
+    },
+
+    mailFrom: '俊景科技<jjwlkj@aliyun.com>',
     mailSender: {
         host: 'smtp.aliyun.com',
         port: 465,
         auth: {
             user: 'jjwlkj@aliyun.com',
-            pass:'jUNjING999...'
+            pass: 'jUNjING999...'
         }
     },
+    defaultMailOptions: {
+        from: '俊景科技<jjwlkj@aliyun.com>',
+        to: '1420476380@qq.com',
+        subject: 'Hello',
+        text: '这是一封来自Node.js的测试邮件。',
+        html: '<b>这是一封来自小何的邮件。</b>',
+        // 邮件附件写法
+        // attachments: [{
+        //     filname: 'test.md',
+        //     path: './config.js'
+        // },{
+        // filename: 'content',
+        // content:'发送内容'
+        // }]
 
+    }
 
 
 };
