@@ -20,9 +20,9 @@ router.use((req, res, next) => {
     Log.Print(Log.Level.Info, name, '全局路由', req.ip, req.method, req.originalUrl);
 
     // 跨域返回头
-    // let origin = config.origin ? config.origin : req.headers.origin;
+    let origin = config.origin ? config.origin : req.headers.origin;
+    res.header('Access-Control-Allow-Origin', origin);
     // res.header('Access-Control-Allow-Origin', '*');
-    // res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

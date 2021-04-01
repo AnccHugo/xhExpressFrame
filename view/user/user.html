@@ -18,19 +18,17 @@
                 <!-- 用户邮箱 -->
                 <div class="text_user">
                     <label class="lbl_email"></label>
-                    <input type="text" id="txtEmailLogin" class="txt_email" autofocus="autofocus" value=""
-                        placeholder="邮箱" maxlength="32" name="email" autocomplete="off">
+                    <input type="text" id="txtEmailLogin" class="txt_email" autofocus="autofocus" value="" placeholder="邮箱" maxlength="32" name="email" autocomplete="off">
                 </div>
 
                 <!-- 用户密码 -->
                 <div class="text_user">
                     <label class="lbl_password"></label>
-                    <input type="password" id="txtPasswordLogin" class="txt_password" autofocus="autofocus" value=""
-                        placeholder="密码" maxlength="16" name="password" autocomplete="off">
+                    <input type="password" id="txtPasswordLogin" class="txt_password" autofocus="autofocus" value="" placeholder="密码" maxlength="16" name="password" autocomplete="off">
                 </div>
 
                 <!-- 验证码 -->
-                <div class="checkcode">
+                <!-- <div class="checkcode">
                     <div class="checkcode_num">
                         <input type="text" id="txtCheckcodeLogin" class="txt_checkcode" autofocus="autofocus" value=""
                             placeholder="验证码" maxlength="4" name="checkcode" autocomplete="off">
@@ -38,14 +36,13 @@
                     <div class="checkcode_img">
                         <img id="imgCheckcode" src="https://www.procell.com.cn/index.php?m=Home&c=Member&a=verify">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- 忘记密码 -->
-                <div class="forgetpwd"><a>忘记密码？</a></div>
+                <!-- <div class="forgetpwd"><a>忘记密码？</a></div> -->
 
                 <!-- 登录账号 -->
-                <div class="btn_login"><a id="btnUserLogin" class="a_login" href="javascript:void(0);"
-                        name="sbtbutton">登 录</a></div>
+                <div class="btn_login"><a id="btnUserLogin" class="a_login" href="javascript:void(0);" name="sbtbutton">登 录</a></div>
             </form>
         </div>
         <!-- E === 用户登录 === E -->
@@ -56,35 +53,32 @@
                 <div class="line">
                     <label class="lbl_email">
                         <em>*</em>
-                        <span class="dt">个人邮箱：</span>
+                        <span class="dt">个人邮箱：&nbsp;&nbsp;&nbsp;</span>
                     </label>
                     <div class="line2">
-                        <input type="text" id="txtEmailRegiste" class="txt_email" placeholder="请输入邮箱" maxlength="32"
-                            name="email" required="">
+                        <input type="text" id="txtEmailRegiste" class="txt_email" placeholder="请输入邮箱" maxlength="32" name="email" required="">
                     </div>
                 </div>
                 <div class="line">
                     <label class="lbl_password">
                         <em>*</em>
-                        <span class="dt">设置密码：</span>
+                        <span class="dt">设置密码：&nbsp;&nbsp;&nbsp;</span>
                     </label>
                     <div class="line2">
-                        <input type="password" id="txtPasswordRegiste" class="txt_password"
-                            placeholder="6-16位大小写英文字母、数字或符号的组合" name="password" autocomplete="off" maxlength="16"
-                            required="">
+                        <input type="password" id="txtPasswordRegiste" class="txt_password" placeholder="6-16位大小写英文字母、数字或符号的组合" name="password" autocomplete="off" maxlength="16" required="">
                     </div>
                 </div>
                 <div class="line">
                     <label class="lbl_password2">
                         <em>*</em>
-                        <span class="dt">确认密码：</span>
+                        <span class="dt">输入验证码：</span>
                     </label>
                     <div class="line2">
-                        <input type="password" id="txtPassword2Registe" class="txt_password" placeholder="请再次输入密码"
-                            name="password2" autocomplete="off" maxlength="16" required="">
+                        <input type="number" id="txtVerifyCodeRegiste" class="txt_password" placeholder="请输入验证码" name="password2" autocomplete="off" maxlength="16" required="">
                     </div>
                 </div>
                 <div class="line liney clearfix">
+                    <a id="btnUserSendVerifyCode" class="a_registe" href="javascript:void(0);" name="sbtbutton">获取验证码</a>
                     <a id="btnUserRegiste" class="a_registe" href="javascript:void(0);" name="sbtbutton">同意协议并注册</a>
                 </div>
             </form>

@@ -1,3 +1,13 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 /*  */
 
 
@@ -225,7 +235,7 @@
 .mask_user .user_box .user_registe {
     display: none;
     margin-top: 20px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .user_registe form label {

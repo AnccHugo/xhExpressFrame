@@ -57,8 +57,8 @@ function WebServer() {
 
         _expServer.engine('html', express_art_template);
         _expServer.use('/public', express.static(path.join(__dirname, '../public')));
-        _expServer.use(express.urlencoded({ extended: true }));
-        _expServer.use(express.json());
+        _expServer.use(express.json({ limit: '50mb' }));
+        _expServer.use(express.urlencoded({ limit: '50mb', extended: true }));
         _expServer.use(router);
     }
 
