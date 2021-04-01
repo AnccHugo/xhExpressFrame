@@ -5,13 +5,14 @@ const config = require('../lib/xhLibB').config;
 const express = require('express');
 const xhWebServer = require('../lib/xhLibB').WebServer;
 const express_art_template = require('express-art-template');
+const bodyParser = require('body-parser');
 
 
 
 function WebServer() {
     const srvConfig = {
-        port: config.webPort ? config.webPort: 8081,
-        domain: config.domain ? config.domain: '0.0.0.0',
+        port: config.webPort ? config.webPort : 8081,
+        domain: config.domain ? config.domain : '0.0.0.0',
         isRunHttps: config.isRunHttps ? config.isRunHttps : false,
         sslKeyPath: config.sslKeyPath ? config.sslKeyPath : false,
         sslPemPath: config.sslPemPath ? config.sslPemPath : false,
@@ -25,7 +26,7 @@ function WebServer() {
     //             公开方法
     // ========== ========== ==========
 
-    this.Run = function () {
+    this.Run = function() {
         if (!Init()) { return; };
 
         webServer.Run();
@@ -56,6 +57,8 @@ function WebServer() {
 
         _expServer.engine('html', express_art_template);
         _expServer.use('/public', express.static(path.join(__dirname, '../public')));
+        _expServer.use(express.urlencoded({ extended: true }));
+        _expServer.use(express.json());
         _expServer.use(router);
     }
 

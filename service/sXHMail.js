@@ -10,7 +10,7 @@ class Mail {
         this.transporter = nodemailer.createTransport(config.mailSenderProxy);
     }
 
-    send = (fromEmail, toEmail, subject, content, callback) => {
+    send = (fromEmail, toEmail, subject, content) => {
         return new Promise(async(resolve, reject) => {
             let mail = {
                 from: fromEmail,

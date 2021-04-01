@@ -35,7 +35,7 @@ module.exports = {
         }
     },
 
-    mailFrom: '俊景科技<jjwlkj@aliyun.com>',
+    mailFrom: '美森细胞<jjwlkj@aliyun.com>',
     mailSender: {
         host: 'smtp.aliyun.com',
         port: 465,
@@ -59,7 +59,8 @@ module.exports = {
         // content:'发送内容'
         // }]
 
-    }
+    },
 
+    dataPath: path.join(__dirname, '../__data__'),
 
 };
