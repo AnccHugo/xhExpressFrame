@@ -9,7 +9,7 @@ let name = "rProduct";
 // 细胞鉴定服务页面
 rProduct.get('/libary', (req, res) => { res.render('../view/product/libary.html'); });
 
-rProduct.post('/libary/getCells', productController.GetCells);
+rProduct.post('/getCells', productController.GetCells);
 
 
 
