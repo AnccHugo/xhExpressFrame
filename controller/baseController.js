@@ -1,6 +1,8 @@
-class BaseController {
-    constructor() {
+const express = require('express');
 
+class BaseController extends express {
+    constructor(props) {
+      super(props);
     }
 
     errorReturn = async(res, msg = '', data = {}) => {
