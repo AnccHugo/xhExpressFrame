@@ -64,15 +64,16 @@ function GeneralProduct(data) {
     });
 
     cells.data.map((value, index) => {
-      if (!value) { return; }
-      $tbody.append('<tr id="cells_' + index + '"></tr>');
-      $('#cells_' + index).append('<td>' + value[productNumberIdx] + '</td>');
-      $('#cells_' + index).append('<td>' + value[productNameIdx] + '</td>');
-      $('#cells_' + index).append('<td>' + value[productNameENIdx] + '</td>');
-      $('#cells_' + index).append('<td>' + value[productStandardIdx] + '</td>');
-      $('#cells_' + index).append('<td>' + value[productPeiyangtixiIdx] + '</td>');
-      $('#cells_' + index).append('<td>' + value[productShengzhangtexingIdx] + '</td>');
-      if (userInfo) { $('#cells_' + index).append('<td>' + value[productPriceIdx] + '</td>'); }
+      if (value && value[productNumberIdx]) {
+        $tbody.append('<tr id="cells_' + index + '"></tr>');
+        $('#cells_' + index).append('<td>' + value[productNumberIdx] + '</td>');
+        $('#cells_' + index).append('<td>' + value[productNameIdx] + '</td>');
+        $('#cells_' + index).append('<td>' + value[productNameENIdx] + '</td>');
+        $('#cells_' + index).append('<td>' + value[productStandardIdx] + '</td>');
+        $('#cells_' + index).append('<td>' + value[productPeiyangtixiIdx] + '</td>');
+        $('#cells_' + index).append('<td>' + value[productShengzhangtexingIdx] + '</td>');
+        if (userInfo) { $('#cells_' + index).append('<td>' + value[productPriceIdx] + '</td>'); }
+      }
     });
 
 

@@ -70,7 +70,8 @@ const config = {
       name: "CTCC 分销商",
       href: "#"
     },]
-  }, {
+  }, 
+  {
     id: "aboutUs",
     name: "关于我们",
     href: "#",
@@ -90,16 +91,19 @@ const config = {
       id: "newsInformation",
       name: "新闻动态",
       href: "#"
-    },]
-  }, {
-    id: "salesPromotion",
-    name: "促销活动",
-    href: "#",
-  },],
+    },
+    ]
+  },
+  // {
+  //   id: "salesPromotion",
+  //   name: "促销活动",
+  //   href: "#",
+  // },
+  ],
 
   // api
   api: {
-    product:{
+    product: {
       getCells: "/product/getCells"
     }
   },
