@@ -7,130 +7,130 @@ const mail = require('../service/sXHMail');
 const __USER_TABLE_PATH__ = path.join(config.dataPath, 'userTable.json');
 
 class UserModel extends BaseModel {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        function init() {
-            if (!fs.existsSync(config.dataPath)) {
-                fs.mkdirSync(config.dataPath, { recursive: true });
-            }
+    function init() {
+      if (!fs.existsSync(config.dataPath)) {
+        fs.mkdirSync(config.dataPath, { recursive: true });
+      }
 
-            if (!fs.existsSync(__USER_TABLE_PATH__)) {
-                fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: [] }));
-            }
-        }
-
-        init();
+      if (!fs.existsSync(__USER_TABLE_PATH__)) {
+        fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: [] }));
+      }
     }
 
-    login = async({ email, password }) => {
-        if (!email || !password) {
-            return this.errorReturn('PARAMS_LACK');
-        }
+    init();
+  }
 
-        let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
-        userTable = JSON.parse(userTable).users;
-        if (!userTable) {
-            return this.errorReturn('USER_TABLE_READ_FAIL');
-        }
+  login = async ({ email, password }) => {
+    if (!email || !password) {
+      return this.errorReturn('PARAMS_LACK');
+    }
 
-        const user = await userTable.find((value, index, ele) => {
-            return value.email === email ? value : false;
-        });
+    let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
+    userTable = JSON.parse(userTable).users;
+    if (!userTable) {
+      return this.errorReturn('USER_TABLE_READ_FAIL');
+    }
 
-        if (!user) {
-            return this.errorReturn('USER_NOT_FIND');
-        }
+    const user = await userTable.find((value, index, ele) => {
+      return value.email === email ? value : false;
+    });
 
-        if (user.password && user.password === password) {
-            userTable.shift(user);
-            user.logintime = Date.now();
-            userTable.push(user);
-            fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
+    if (!user) {
+      return this.errorReturn('USER_NOT_FIND');
+    }
 
-            return this.successReturn('', { user });
-        }
+    if (user.password && user.password === password) {
+      userTable.shift(user);
+      user.logintime = Date.now();
+      userTable.push(user);
+      fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
 
+      delete user.password;
+      return this.successReturn('', { user });
+    }
 
-        return this.errorReturn();
-    };
+    return this.errorReturn('USER_PASSOWRD_ERROR');
+  };
 
-    registe = async({ email, password, verifyCode }) => {
-        if (!email || !password || !verifyCode) {
-            return this.errorReturn(res, 'PARAMS_LACK');
-        }
+  registe = async ({ email, password, verifyCode }) => {
+    if (!email || !password || !verifyCode) {
+      return this.errorReturn(res, 'PARAMS_LACK');
+    }
 
-        let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
-        userTable = JSON.parse(userTable).users;
-        if (!userTable) {
-            return this.errorReturn('USER_TABLE_READ_FAIL');
-        }
+    let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
+    userTable = JSON.parse(userTable).users;
+    if (!userTable) {
+      return this.errorReturn('USER_TABLE_READ_FAIL');
+    }
 
-        let user = await userTable.find((value, index, ele) => {
-            return value.email === email ? value : false;
-        });
+    let user = await userTable.find((value, index, ele) => {
+      return value.email === email ? value : false;
+    });
 
-        if (!user) {
-            return this.errorReturn('USER_NOT_FIND');
-        }
+    if (!user) {
+      return this.errorReturn('USER_NOT_FIND');
+    }
 
-        if (user.isVerify) {
-            return this.successReturn('');
-        }
+    if (user.isVerify) {
+      return this.successReturn('');
+    }
 
-        if (!user.verifyCode) {
-            return this.errorReturn('USER_VERIFY_CODE_NOT_FIND');
-        }
+    if (!user.verifyCode) {
+      return this.errorReturn('USER_VERIFY_CODE_NOT_FIND');
+    }
 
-        if (user.verifyCode != verifyCode) {
-            return this.errorReturn('USER_VERIFY_FAIL');
-        }
+    if (user.verifyCode != verifyCode) {
+      return this.errorReturn('USER_VERIFY_FAIL');
+    }
 
-        userTable.shift(user);
-        user.isVerify = true;
-        user.password = password;
-        user.registetime = Date.now();
-        userTable.push(user);
-        fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
+    userTable.shift(user);
+    user.isVerify = true;
+    user.password = password;
+    user.registetime = Date.now();
+    userTable.push(user);
+    fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
 
-        return this.successReturn();
-    };
+    return this.successReturn();
+  };
 
-    sendVerifyCode = async({ email }) => {
-        if (!email) {
-            return this.errorReturn('PARAMS_LACK');
-        }
+  sendVerifyCode = async ({ email }) => {
+    if (!email) {
+      return this.errorReturn('PARAMS_LACK');
+    }
 
-        let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
-        userTable = JSON.parse(userTable).users;
-        if (!userTable) {
-            return this.errorReturn('USER_TABLE_READ_FAIL');
-        }
+    let userTable = fs.readFileSync(__USER_TABLE_PATH__, { encoding: 'utf-8' });
+    userTable = JSON.parse(userTable).users;
+    if (!userTable) {
+      return this.errorReturn('USER_TABLE_READ_FAIL');
+    }
 
-        let user = await userTable.find((value, index, ele) => {
-            return value.email === email ? value : false;
-        });
+    let user = await userTable.find((value, index, ele) => {
+      return value.email === email ? value : false;
+    });
 
-        user = user || {};
-        userTable.shift({ email });
+    user = user || {};
+    userTable.shift({ email });
 
-        user.email = email;
-        user.createtime = Date.now();
-        user.verifyCode = '';
-        for (let i = 0; i < 6; i++) {
-            user.verifyCode += Math.floor(Math.random() * 10);
-        }
+    user.email = email;
+    user.createtime = Date.now();
+    user.verifyCode = '';
+    for (let i = 0; i < 6; i++) {
+      user.verifyCode += Math.floor(Math.random() * 10);
+    }
 
-        userTable.push(user);
-        fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
+    userTable.push(user);
+    fs.writeFileSync(__USER_TABLE_PATH__, JSON.stringify({ users: userTable }));
 
-        const sendResult = await mail.send(config.mailFrom, email, '账号注册', '请查收验证码：（' + user.verifyCode + '）');
-        if (!sendResult) {
-            return this.errorReturn('USER_VERIFY_CODE_SEND_FAIL');
-        }
+    const sendResult = await mail.send(config.mailFrom, email, '账号注册', '请查收验证码：（' + user.verifyCode + '）');
+    if (!sendResult) {
+      return this.errorReturn('USER_VERIFY_CODE_SEND_FAIL');
+    }
 
-        return this.successReturn('');
-    };
+    return this.successReturn('');
+  };
 
 }
 

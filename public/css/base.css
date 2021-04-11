@@ -237,6 +237,13 @@ header .navigation_top {
     display: block;
 }
 
+.navigation_top .user_is_login {
+  display: none;
+}
+
+.navigation_top .user_is_login span {
+  text-decoration: underline;
+}
 
 /*  */
 

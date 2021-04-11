@@ -32,6 +32,8 @@ content .libary .tabs_common {
     overflow: hidden;
 }
 
+.tab_body .tab_list 
+
 .tab_body .tab_list li {
     float: left;
     display: block;
@@ -138,6 +140,7 @@ content .libary {
     color: #666;
     font-size: 14px;
     padding-left: 24px;
+    text-align: left;
     border-bottom: 1px solid #ededed;
     cursor: pointer;
 }
