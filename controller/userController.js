@@ -54,6 +54,7 @@ class UserController extends BaseController {
   };
 
   sendLiuyan = async (req, res) => {
+    console.log(req.body);
     let { fullname, phone, email, company, city, message } = req.body;
 
     if (!fullname || !phone || !email || !company || !city || !message) {

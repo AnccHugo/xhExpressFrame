@@ -30,6 +30,7 @@ module.exports = {
     { email: "3239683964@qq.com", city: [] },
     { email: "3093265819@qq.com", city: [] },
     { email: "2939617395@qq.com", city: [] },
+    { email: "tianguotianshi@163.com", city: [] },
   ],
   companyEmail: "俊景科技<jjwlkj@aliyun.com>",
   mailSenderProxy: {

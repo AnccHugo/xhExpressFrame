@@ -3,79 +3,80 @@
 
 
 <content>
-    <div class="user_liuyan">
-        <div class="liuyan_box">
-            <h2 class="liuyan_title">在线留言</h2>
-            <p class="liuyan_desc">如果您对我们的产品或服务有任何疑问， 请填写下面的留言表单，我们会第一时间给您反馈。</p>
-            <form class="liuyan_form" novalidate="novalidate">
-                <!-- 姓名 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            姓名：
-                        </span>
-                    </div>
-                    <input type="text" placeholder="请输入文本">
-                </div>
+  <div class="user_liuyan">
+    <div class="liuyan_box">
+      <h2 class="liuyan_title">在线留言</h2>
+      <p class="liuyan_desc">如果您对我们的产品或服务有任何疑问， 请填写下面的留言表单，我们会第一时间给您反馈。</p>
+      <form class="liuyan_form" novalidate="novalidate">
+        <!-- 姓名 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              姓名：
+            </span>
+          </div>
+          <input id=txtLiuyan_Fullname type="text" placeholder="请输入文本">
+        </div>
 
-                <!-- 电话 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            手机：
-                        </span>
-                    </div>
-                    <input id="numLiuyan_Phone" type="tel" placeholder="请输入文本" minlength="11" maxlength="11">
-                </div>
+        <!-- 电话 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              手机：
+            </span>
+          </div>
+          <input id="numLiuyan_Phone" type="tel" placeholder="请输入文本" minlength="11" maxlength="11">
+        </div>
 
-                <!-- 邮箱 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            邮箱：
-                        </span>
-                    </div>
-                    <input id="txtLiuyan_Mail" type="text" minlength="5" placeholder="请输入文本">
-                </div>
+        <!-- 邮箱 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              邮箱：
+            </span>
+          </div>
+          <input id="txtLiuyan_Email" type="text" minlength="5" placeholder="请输入文本">
+        </div>
 
-                <!-- 公司 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            公司：
-                        </span>
-                    </div>
-                    <input id="txtLiuyan_company" type="text" minlength="3" placeholder="请输入文本">
-                </div>
+        <!-- 公司 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              公司：
+            </span>
+          </div>
+          <input id="txtLiuyan_company" type="text" minlength="3" placeholder="请输入文本">
+        </div>
 
-                <!-- 城市 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            城市：
-                        </span>
-                    </div>
-                    <input id="txtLiuyan_City" type="text" minlength="1" placeholder="请输入文本">
-                </div>
+        <!-- 城市 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              城市：
+            </span>
+          </div>
+          <input id="txtLiuyan_City" type="text" minlength="1" placeholder="请输入文本">
+        </div>
 
-                <!-- 留言内容 -->
-                <div class="relativeD">
-                    <div class="name_title">
-                        <span>
-                            <em>*</em>
-                            留言：
-                        </span>
-                    </div>
-                    <textarea id="txtareaLiuyan_content" name="summary" class="summary" minlength="10" placeholder="留言不少于十个字"></textarea>
-                </div>
+        <!-- 留言内容 -->
+        <div class="relativeD">
+          <div class="name_title">
+            <span>
+              <em>*</em>
+              留言：
+            </span>
+          </div>
+          <textarea id="txtareaLiuyan_content" name="summary" class="summary" minlength="10"
+            placeholder="留言不少于十个字"></textarea>
+        </div>
 
-                <!-- 验证码 -->
-                <div class="relativeD">
+        <!-- 验证码 -->
+        <!-- <div class="relativeD">
                     <div class="name_title">
                         <span>
                             <em>*</em>
@@ -86,17 +87,17 @@
                     <div class="check_cum_img">
                         <img src="https://www.procell.com.cn/index.php?m=Home&amp;c=Member&amp;a=verify" id="verify_code_img" onclick="verify()">
                     </div>
-                </div>
+                </div> -->
 
-                <!-- 提交留言按钮 -->
-                <div class="relativeD">
-                    <div class="liuyan_tijiao">
-                        <button id="btnCommitLiuyan">提交留言</button>
-                    </div>
-                </div>
-            </form>
+        <!-- 提交留言按钮 -->
+        <div class="relativeD">
+          <div class="liuyan_tijiao">
+            <button id="btnCommitLiuyan">提交留言</button>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </content>
 
 

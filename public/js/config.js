@@ -9,6 +9,7 @@ const config = {
   apiServerProtocol: 'http://',
   apiServerHost: 'lolcahost',
   apiServerPort: 81,
+  apiServerUrl: "http://localhost:81",
 
   // 菜单项
   menu: [{
@@ -70,7 +71,7 @@ const config = {
       name: "CTCC 分销商",
       href: "#"
     },]
-  }, 
+  },
   {
     id: "aboutUs",
     name: "关于我们",
@@ -94,11 +95,11 @@ const config = {
     },
     ]
   },
-  // {
-  //   id: "salesPromotion",
-  //   name: "促销活动",
-  //   href: "#",
-  // },
+    // {
+    //   id: "salesPromotion",
+    //   name: "促销活动",
+    //   href: "#",
+    // },
   ],
 
   // api
@@ -109,3 +110,10 @@ const config = {
   },
 
 };
+
+
+if (config.isRelease) {
+  config.apiServerProtocol = "https://";
+  config.apiServerHost = "www.ctcc.online";
+  config.apiServerUrl = config.apiServerProtocol + config.apiServerHost + ':' + config.apiServerPort;
+}

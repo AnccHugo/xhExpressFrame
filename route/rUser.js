@@ -10,6 +10,17 @@ let rUser = express();
 rUser.get('/liuyan', (req, res) => { res.render('../view/user/liuyan.html'); });
 
 /** 
+ * @param {string} fullname
+ * @param {string} phone
+ * @param {string} email
+ * @param {string} company
+ * @param {string} city
+ * @param {string} message
+*/
+rUser.post('/liuyan', userController.sendLiuyan);
+
+
+/** 
  * @param {string} email
  * @param {string} password
  */
@@ -25,7 +36,6 @@ rUser.post('/registe', userController.registe);
  * @param {string} email
  */
 rUser.post('/sendVerifyCode', userController.sendVerifyCode);
-
 
 
 

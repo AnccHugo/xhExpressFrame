@@ -1,25 +1,27 @@
+const regPhone = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
+const regEmail =  /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
+
+
 $(function () {
   $('#btnUserLogin').on('click', function (e) {
-    const url = config.apiServerProtocol + config.apiServerHost + ':' + config.apiServerPort + '/user/login';
+    const url = config.apiServerUrl + '/user/login';
     const data = {
       email: $('#txtEmailLogin').val(),
       password: $('#txtPasswordLogin').val()
     };
 
-    $.ajax('http://localhost:81/user/login', {
+    $.ajax(url, {
       data,
       method: 'POST',
       dataType: 'json',
       xhrFields: { withCredentials: true },
       success: function (result) {
-        console.log(result);
         if (result.success && result.data && result.data.user) {
           localStorage.setItem('user', JSON.stringify(result.data.user));
           $('#maskUser').hide();
           alert('登录成功！');
           window.location.reload();
         } else if (result.msg) {
-          console.log(result.msg);
           switch (result.msg) {
             case 'USER_LOGIN_FAIL':
               alert('登录失败！');
@@ -40,24 +42,23 @@ $(function () {
         }
       },
       error: function (err) {
-        console.log(err);
+        console.error(err);
       }
     });
   });
 
   $('#btnUserSendVerifyCode').on('click', function (e) {
-    const url = config.apiServerHost + ':' + config.apiServerPort + '/user/registe';
+    const url = config.apiServerUrl + '/user/sendVerifyCode';
     const data = {
       email: $('#txtEmailRegiste').val(),
     };
 
-    $.ajax('http://localhost:81/user/sendVerifyCode', {
+    $.ajax(url, {
       data,
       method: 'POST',
       dataType: 'json',
       xhrFields: { withCredentials: true },
       success: function (result) {
-        console.log(result);
         if (result.success) {
           alert('请在邮箱中查收！');
         } else {
@@ -65,26 +66,25 @@ $(function () {
         }
       },
       error: function (err) {
-        console.log(err);
+        console.error(err);
       }
     });
   });
 
   $('#btnUserRegiste').on('click', function (e) {
-    const url = config.apiServerHost + ':' + config.apiServerPort + '/user/registe';
+    const url = config.apiServerUrl + '/user/registe';
     const data = {
       email: $('#txtEmailRegiste').val(),
       password: $('#txtPasswordRegiste').val(),
       verifyCode: $('#txtVerifyCodeRegiste').val(),
     };
 
-    $.ajax('http://localhost:81/user/registe', {
+    $.ajax(url, {
       data,
       method: 'POST',
       dataType: 'json',
       xhrFields: { withCredentials: true },
       success: function (result) {
-        console.log(result);
         if (result.success) {
           alert('注册成功！');
           $('.to_login').trigger('click');
@@ -93,7 +93,67 @@ $(function () {
         }
       },
       error: function (err) {
-        console.log(err);
+        console.error(err);
+      }
+    });
+  });
+
+  $('#btnCommitLiuyan').on('click', function () {
+    const url = config.apiServerUrl + '/user/liuyan';
+    const data = {
+      fullname: $('#txtLiuyan_Fullname').val(),
+      phone: $('#numLiuyan_Phone').val(),
+      email: $('#txtLiuyan_Email').val(),
+      company: $('#txtLiuyan_company').val(),
+      city: $('#txtLiuyan_City').val(),
+      message: $('#txtareaLiuyan_content').val(),
+    };
+
+    console.log(data);
+    if(!data.fullname){
+      $('#txtLiuyan_Fullname').focus();
+      return alert("姓名有误！");
+    }
+
+    if(!regPhone.test(data.phone)){
+      $('#numLiuyan_Phone').focus();
+      return alert("手机有误！");
+    }
+
+    if(!regEmail.test(data.email)){
+      $('#txtLiuyan_Email').focus();
+      return alert("邮箱有误！");
+    }
+
+    if(!data.company){
+      $('#txtLiuyan_company').focus();
+      return alert("公司名称有误！");
+    }
+
+    if(!data.city){
+      $('#txtLiuyan_City').focus();
+      return alert("城市名称有误！");
+    }
+
+    if(!data.message){
+      $('#txtareaLiuyan_content').focus();
+      return alert("留言内容有误！");
+    }
+
+    $.ajax(url, {
+      data,
+      method: 'POST',
+      dataType: 'json',
+      xhrFields: { withCredentials: true },
+      success: function (result) {
+        if (result.success) {
+          alert('留言成功！');
+        } else {
+          alert(result.msg);
+        }
+      },
+      error: function (err) {
+        console.error(err);
       }
     });
   });
