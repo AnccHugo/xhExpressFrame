@@ -132,6 +132,37 @@ class UserModel extends BaseModel {
     return this.successReturn('');
   };
 
+  sendLiuyan = async ({ fullname, phone, email, company, city, message }) => {
+    if (!fullname || !phone || !email || !company || !city || !message) {
+      return this.errorReturn('PARAMS_LACK');
+    }
+
+    if (config.meisenEmailPool) {
+      await config.meisenEmailPool.map(value => {
+        if (value && value.email) {
+          let subject = "";
+          subject += "用户留言 - 姓名：" + fullname;
+          subject += " - 公司：" + company;
+          subject += " - 城市" + city;
+
+          let content = "";
+          content += "姓名：" + fullname + "\r\n";
+          content += "手机号：" + phone + "\r\n";
+          content += "邮箱：" + email + "\r\n";
+          content += "公司：" + company + "\r\n";
+          content += "城市：" + city + "\r\n";
+          content += "留言内容：" + message + "\r\n";
+
+          mail.send(config.mailFrom, value.email, subject, content);
+        }
+      });
+
+      return this.successReturn('USER_LIUYAN_SUCCESS');
+    }
+
+    return this.errorReturn('');
+  };
+
 }
 
 const userModel = new UserModel();
