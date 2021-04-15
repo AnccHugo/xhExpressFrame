@@ -118,3 +118,22 @@ if (config.isRelease) {
   config.apiServerHost = "www.ctcc.online";
   config.apiServerUrl = config.apiServerProtocol + config.apiServerHost + ':' + config.apiServerPort;
 }
+
+
+
+
+/**
+ * 自定义函数·
+ */
+jQuery.GetRequest = function () {
+  const url = window.location.search;
+  let theRequest = new Object();
+  if (url.indexOf("?") != -1) {
+    let str = url.substr(1);
+    strs = str.split("&");
+    for (let i = 0; i < strs.length; i++) {
+      theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+    }
+  }
+  return theRequest;
+};

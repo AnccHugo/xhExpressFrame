@@ -8,3 +8,53 @@
 
 
 /* 产品详情页 */
+
+content .product{
+  margin: 0 auto;
+}
+
+.product table{
+  margin: 120px auto;
+}
+
+.product table thead th {
+  height: 60px;
+  /* padding: 0 26px; */
+  padding-left: 24px;
+  color: #333;
+  font-size: 16px;
+  font-weight: bolder;
+  text-align: left;
+  background: #f7f7f7;
+  cursor: default;
+}
+
+.product table tbody tr:hover {
+  background-color: #f7f7f7;
+}
+
+.product table tbody tr td {
+  height: 56px;
+  color: #666;
+  font-size: 14px;
+  padding-left: 24px;
+  text-align: left;
+  border-bottom: 1px solid #ededed;
+  cursor: pointer;
+}
+
+.product table tbody td:first-child {
+  white-space: nowrap;
+}
+
+.product table tbody td:nth-child(2) a {
+  color: #0a8de5;
+}
+
+.product table tbody td:nth-child(2) a:hover {
+  text-decoration: underline;
+}
+
+.product table tbody td a {
+cursor: auto;
+}

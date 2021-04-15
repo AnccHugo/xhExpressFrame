@@ -52,7 +52,6 @@ class ProductModel extends BaseModel {
 
   GetCells = async () => {
     const getResult = _GetCellsJson();
-    // console.log(getResult);
     if (getResult && getResult.success && getResult.data) {
       return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} });
     }
@@ -67,14 +66,14 @@ class ProductModel extends BaseModel {
 
     const getResult = _GetCellsJson();
     if (getResult && getResult.success && getResult.data && getResult.data.title && getResult.data.data) {
-      let titleIndex = null, cell = {};
+      let titleIndex = null, cell = { title: getResult.data.title };
 
       for (const [index, value] of getResult.data.title.entries()) {
         if (value === 'uuid') { titleIndex = index; break; }
       }
 
       for (const [index, value] of getResult.data.data.entries()) {
-        if (value[titleIndex] && value[titleIndex] == cellUuid) { cell = value; break; }
+        if (value[titleIndex] && value[titleIndex] == cellUuid) { cell.data = value; break; }
       }
 
       return this.successReturn(getResult.msg || '', { cell });

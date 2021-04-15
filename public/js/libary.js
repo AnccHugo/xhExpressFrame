@@ -93,22 +93,8 @@ function BlankToCellDetail() {
     return alert('暂无该产品详情页');
   }
 
-  console.log(config.api.product.getCell);
-  $.ajax({
-    method: 'post',
-    url: config.api.product.getCell,
-    data: { cellUuid },
-    xhrFields: {
-      withCredentials: true
-    },
-    success: function (data) {
-      console.log(data);
-      if (data.success && data.data) {
-        // GeneralProduct(data.data);
-      }
-    },
-    error: function (err) {
-      console.log(err);
-    }
-  });
+  const detailPageUrl =  "/product/detail?cellUuid=" + cellUuid;
+  
+  window.open(detailPageUrl, '_blank');
+
 }
