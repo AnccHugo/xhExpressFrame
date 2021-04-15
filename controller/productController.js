@@ -9,10 +9,24 @@ class ProductController extends BaseController {
   GetCells = async (req, res) => {
     const getResult = await productModel.GetCells();
     if (getResult && getResult.success) {
-      return this.successReturn(res, getResult.msg || "CELLS_GET_SUCCESS", getResult.data || {});
+      return this.successReturn(res, getResult.msg || "", getResult.data || {});
     }
 
-    this.errorReturn(res, getResult.msg || "CELLS_GET_FAIL", getResult.data || {});
+    this.errorReturn(res, getResult.msg || "", getResult.data || {});
+  };
+
+  GetCell = async (req, res) => {
+    const { cellUuid } = req.body;
+    if (!cellUuid) {
+      return this.errorReturn(res, 'PARAMS_LACK');
+    }
+
+    const getResult = await productModel.GetCell({ cellUuid });
+    if (getResult && getResult.success) {
+      return this.successReturn(res, getResult.msg || "", getResult.data || {});
+    }
+
+    this.errorReturn(res, getResult.msg || "", getResult.data || {});
   };
 
 }

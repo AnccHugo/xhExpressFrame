@@ -25,7 +25,14 @@ const __PRODUCT_CELLS_JSON_PATH__ = path.join(config.dataPath, '/cells.json');
   let cellsJson = {};
   if (cellsSheet && cellsSheet.data) {
     cellsJson.title = cellsSheet.data.shift();
-    cellsJson.data = cellsSheet.data;
+    cellsJson.data = [];
+    cellsJson.title.unshift('uuid');
+    cellsSheet.data.map((value, index) => {
+      if (value && value.length > 0) {
+        value.unshift(index + 1);
+        cellsJson.data.push(value);
+      }
+    });
     cellsJson.createTime = Date.now();
     cellsJson.updateTime = Date.now();
 
@@ -44,18 +51,50 @@ class ProductModel extends BaseModel {
   constructor(props) { super(props); }
 
   GetCells = async () => {
-    if(!fs.existsSync(__PRODUCT_CELLS_JSON_PATH__)){
-      return this.errorReturn('CELLS_FILE_NOT_FOUND');
+    const getResult = _GetCellsJson();
+    // console.log(getResult);
+    if (getResult && getResult.success && getResult.data) {
+      return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} });
     }
 
-    const cellsJson = JSON.parse(fs.readFileSync(__PRODUCT_CELLS_JSON_PATH__));
-    if(cellsJson){
-      return this.successReturn('', {cellsJson});
-    }
-
-    return this.errorReturn('CELLS_GET_FAIL');
+    return this.errorReturn(getResult.msg || 'CELLS_GET_FAIL', getResult.data || {});
   };
 
+  GetCell = async ({ cellUuid }) => {
+    if (!cellUuid) {
+      return this.errorReturn('PARAMS_LACK');
+    }
+
+    const getResult = _GetCellsJson();
+    if (getResult && getResult.success && getResult.data && getResult.data.title && getResult.data.data) {
+      let titleIndex = null, cell = {};
+
+      for (const [index, value] of getResult.data.title.entries()) {
+        if (value === 'uuid') { titleIndex = index; break; }
+      }
+
+      for (const [index, value] of getResult.data.data.entries()) {
+        if (value[titleIndex] && value[titleIndex] == cellUuid) { cell = value; break; }
+      }
+
+      return this.successReturn(getResult.msg || '', { cell });
+    }
+
+    return this.errorReturn('CELL_GET_FAIL', getResult.data || {});
+  };
+}
+
+function _GetCellsJson() {
+  if (!fs.existsSync(__PRODUCT_CELLS_JSON_PATH__)) {
+    return { success: false, msg: 'CELLS_FILE_NOT_FOUND' };
+  }
+
+  const cellsJson = JSON.parse(fs.readFileSync(__PRODUCT_CELLS_JSON_PATH__));
+  if (cellsJson) {
+    return { success: true, msg: 'CELLS_GET_SUCCESS', data: cellsJson };
+  }
+
+  return { success: false, msg: 'CELLS_GET_FAIL' };
 }
 
 const productModel = new ProductModel();

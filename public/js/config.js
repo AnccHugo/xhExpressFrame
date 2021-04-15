@@ -105,7 +105,8 @@ const config = {
   // api
   api: {
     product: {
-      getCells: "/product/getCells"
+      getCells: "/product/getCells",
+      getCell: "/product/getCell",
     }
   },
 

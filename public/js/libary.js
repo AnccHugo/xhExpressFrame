@@ -31,6 +31,7 @@ function GeneralProduct(data) {
     $thead.html('');
     $tbody.html('');
 
+    var productUuidIdx = null;
     var productNumberIdx = null;
     var productNameIdx = null;
     var productNameENIdx = null;
@@ -48,6 +49,8 @@ function GeneralProduct(data) {
     if (userInfo) { $thead.append('<th scope="col" style="width:auto;">终端价</th>'); }
 
     cells.title.map((value, index) => {
+      if (value === "uuid") { productUuidIdx = index; }
+
       if (value === "货号") { productNumberIdx = index; }
 
       if (value === "细胞名称") { productNameIdx = index; }
@@ -65,7 +68,7 @@ function GeneralProduct(data) {
 
     cells.data.map((value, index) => {
       if (value && value[productNumberIdx]) {
-        $tbody.append('<tr id="cells_' + index + '"></tr>');
+        $tbody.append('<tr id="cells_' + index + '" uuid="' + value[productUuidIdx] + '"></tr>');
         $('#cells_' + index).append('<td>' + value[productNumberIdx] + '</td>');
         $('#cells_' + index).append('<td>' + value[productNameIdx] + '</td>');
         $('#cells_' + index).append('<td>' + value[productNameENIdx] + '</td>');
@@ -73,9 +76,39 @@ function GeneralProduct(data) {
         $('#cells_' + index).append('<td>' + value[productPeiyangtixiIdx] + '</td>');
         $('#cells_' + index).append('<td>' + value[productShengzhangtexingIdx] + '</td>');
         if (userInfo) { $('#cells_' + index).append('<td>' + value[productPriceIdx] + '</td>'); }
+
+        $('#cells_' + index).on('click', BlankToCellDetail);
       }
     });
 
 
   }
+}
+
+
+function BlankToCellDetail() {
+  const cellUuid = $(this).attr('uuid');
+
+  if (!cellUuid) {
+    return alert('暂无该产品详情页');
+  }
+
+  console.log(config.api.product.getCell);
+  $.ajax({
+    method: 'post',
+    url: config.api.product.getCell,
+    data: { cellUuid },
+    xhrFields: {
+      withCredentials: true
+    },
+    success: function (data) {
+      console.log(data);
+      if (data.success && data.data) {
+        // GeneralProduct(data.data);
+      }
+    },
+    error: function (err) {
+      console.log(err);
+    }
+  });
 }
