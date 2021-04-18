@@ -50,9 +50,38 @@ const __PRODUCT_CELLS_JSON_PATH__ = path.join(config.dataPath, '/cells.json');
 class ProductModel extends BaseModel {
   constructor(props) { super(props); }
 
-  GetCells = async () => {
+  GetCells = async ({ keyword = null }) => {
+    const regMatch = new RegExp(keyword, 'g');
+    const strReplace = `<strong>${keyword}</strong>`;
+
     const getResult = _GetCellsJson();
     if (getResult && getResult.success && getResult.data) {
+      let cells = Object.assign({}, getResult.data);
+      cells.data = [];
+
+      console.log(keyword);
+      if (keyword) {
+        for (let [index, value] of Object.entries(getResult.data.data)) {
+          let isMatch = false;
+
+          for (let [idx, val] of Object.entries(value)) {
+            if (!val) { break; }
+
+            val = new String(val);
+
+            value[idx] = val.replace(regMatch, strReplace);
+
+            if (val && regMatch.test(val) && !isMatch) {
+              isMatch = true;
+            }
+          }
+
+          if (isMatch) { cells.data.push(value); }
+        }
+
+        return this.successReturn(getResult.msg || '', { cellsJson: cells || {} });
+      }
+
       return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} });
     }
 

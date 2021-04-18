@@ -7,7 +7,7 @@ class ProductController extends BaseController {
   constructor(props) { super(props); }
 
   GetCells = async (req, res) => {
-    const getResult = await productModel.GetCells();
+    const getResult = await productModel.GetCells(req.body);
     if (getResult && getResult.success) {
       return this.successReturn(res, getResult.msg || "", getResult.data || {});
     }

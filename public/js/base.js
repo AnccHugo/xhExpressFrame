@@ -15,8 +15,12 @@ function Init() {
   Bind_SearchCell();
 }
 
-function Bind_SearchCell(){
+function Bind_SearchCell() {
+  $("#btnSearchCell").on("click", function () {
+    const keyword = $("#txtSearchCell").val();
 
+    $.OpenWindow(encodeURI('/product/libary?keyword=' + keyword));
+  })
 
 }
 

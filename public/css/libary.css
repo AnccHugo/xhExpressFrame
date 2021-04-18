@@ -161,6 +161,12 @@ content .libary {
   cursor: auto;
 }
 
+.pro_list table tbody td strong{
+  color: red;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
 /*  */
 
 /*  */

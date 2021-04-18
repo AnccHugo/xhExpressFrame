@@ -142,3 +142,10 @@ jQuery.GetRequest = function (uri = null) {
   }
   return theRequest;
 };
+
+jQuery.OpenWindow = function (uri = null) {
+  var a = $("<a href='" + (uri || '/') + "' target='_blank'></a>").get(0);
+  var e = document.createEvent('MouseEvents');
+  e.initEvent('click', true, true);
+  a.dispatchEvent(e);
+};

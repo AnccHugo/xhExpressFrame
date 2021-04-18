@@ -1,7 +1,10 @@
 $(function () {
+  const params = $.GetRequest(decodeURI(window.location.search));
+
   $.ajax({
     method: 'post',
     url: config.api.product.getCells,
+    data: { keyword: params.keyword || null },
     xhrFields: { withCredentials: true },
     success: function (data) {
       if (data.success && data.data) {
@@ -13,7 +16,6 @@ $(function () {
     }
   });
 });
-
 
 function GeneralProduct(data) {
   const cells = data.cellsJson;
@@ -64,6 +66,7 @@ function GeneralProduct(data) {
       if (value === "终端价" && userInfo) { productPriceIdx = index; }
     });
 
+
     cells.data.map((value, index) => {
       if (value && value[productNumberIdx]) {
         $tbody.append('<tr id="cells_' + index + '" uuid="' + value[productUuidIdx] + '"></tr>');
@@ -87,12 +90,7 @@ function GeneralProduct(data) {
 function BlankToCellDetail() {
   const cellUuid = $(this).attr('uuid');
 
-  if (!cellUuid) {
-    return alert('暂无该产品详情页');
-  }
+  if (!cellUuid) { return alert('暂无该产品详情页'); }
 
-  const detailPageUrl = "/product/detail?cellUuid=" + cellUuid;
-
-  window.open(detailPageUrl, '_blank');
-
+  $.OpenWindow("/product/detail?cellUuid=" + cellUuid);
 }
