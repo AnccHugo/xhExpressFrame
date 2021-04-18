@@ -12,6 +12,12 @@ $(function () {
 function Init() {
   Bind_MaskUser();
   Bind_Userbox();
+  Bind_SearchCell();
+}
+
+function Bind_SearchCell(){
+
+
 }
 
 function Bind_MaskUser() {

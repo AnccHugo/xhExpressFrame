@@ -6,9 +6,7 @@ $(function () {
       method: 'post',
       url: config.api.product.getCell,
       data: { cellUuid: urlParams.cellUuid },
-      xhrFields: {
-        withCredentials: true
-      },
+      xhrFields: { withCredentials: true },
       success: function (result) {
         if (result.success && result.data && result.data.cell) {
           return _RenderDetaiil(result.data.cell);

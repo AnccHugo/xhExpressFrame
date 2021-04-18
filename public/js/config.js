@@ -6,10 +6,10 @@ const config = {
   isRelease: false,
 
   // 服务端
-  apiServerProtocol: 'http://',
-  apiServerHost: 'lolcahost',
-  apiServerPort: 81,
-  apiServerUrl: "http://localhost:81",
+  apiServerProtocol: (window.location.protocol + "//") || 'http://',
+  apiServerHost: window.location.hostname || 'localhost',
+  apiServerPort: window.location.port || 81,
+  apiServerUrl: window.location.origin || "http://localhost:81",
 
   // 菜单项
   menu: [{
@@ -104,6 +104,12 @@ const config = {
 
   // api
   api: {
+    user: {
+      login: "/user/login",
+      liuyan: "/user/liuyan",
+      registe: "/user/registe",
+      sendVerifyCode: "/user/sendVerifyCode",
+    },
     product: {
       getCells: "/product/getCells",
       getCell: "/product/getCell",
@@ -121,12 +127,11 @@ if (config.isRelease) {
 
 
 
-
 /**
  * 自定义函数·
  */
-jQuery.GetRequest = function () {
-  const url = window.location.search;
+jQuery.GetRequest = function (uri = null) {
+  const url = uri || window.location.search;
   let theRequest = new Object();
   if (url.indexOf("?") != -1) {
     let str = url.substr(1);

@@ -1,16 +1,16 @@
 const regPhone = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
-const regEmail =  /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
+const regEmail = /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
 
 
 $(function () {
   $('#btnUserLogin').on('click', function (e) {
-    const url = config.apiServerUrl + '/user/login';
     const data = {
       email: $('#txtEmailLogin').val(),
       password: $('#txtPasswordLogin').val()
     };
 
-    $.ajax(url, {
+    $.ajax({
+      url: config.api.user.login,
       data,
       method: 'POST',
       dataType: 'json',
@@ -48,12 +48,12 @@ $(function () {
   });
 
   $('#btnUserSendVerifyCode').on('click', function (e) {
-    const url = config.apiServerUrl + '/user/sendVerifyCode';
     const data = {
       email: $('#txtEmailRegiste').val(),
     };
 
-    $.ajax(url, {
+    $.ajax({
+      url: config.api.user.sendVerifyCode,
       data,
       method: 'POST',
       dataType: 'json',
@@ -72,14 +72,14 @@ $(function () {
   });
 
   $('#btnUserRegiste').on('click', function (e) {
-    const url = config.apiServerUrl + '/user/registe';
     const data = {
       email: $('#txtEmailRegiste').val(),
       password: $('#txtPasswordRegiste').val(),
       verifyCode: $('#txtVerifyCodeRegiste').val(),
     };
 
-    $.ajax(url, {
+    $.ajax({
+      url: config.api.user.registe,
       data,
       method: 'POST',
       dataType: 'json',
@@ -99,7 +99,6 @@ $(function () {
   });
 
   $('#btnCommitLiuyan').on('click', function () {
-    const url = config.apiServerUrl + '/user/liuyan';
     const data = {
       fullname: $('#txtLiuyan_Fullname').val(),
       phone: $('#numLiuyan_Phone').val(),
@@ -109,38 +108,38 @@ $(function () {
       message: $('#txtareaLiuyan_content').val(),
     };
 
-    console.log(data);
-    if(!data.fullname){
+    if (!data.fullname) {
       $('#txtLiuyan_Fullname').focus();
       return alert("姓名有误！");
     }
 
-    if(!regPhone.test(data.phone)){
+    if (!regPhone.test(data.phone)) {
       $('#numLiuyan_Phone').focus();
       return alert("手机有误！");
     }
 
-    if(!regEmail.test(data.email)){
+    if (!regEmail.test(data.email)) {
       $('#txtLiuyan_Email').focus();
       return alert("邮箱有误！");
     }
 
-    if(!data.company){
+    if (!data.company) {
       $('#txtLiuyan_company').focus();
       return alert("公司名称有误！");
     }
 
-    if(!data.city){
+    if (!data.city) {
       $('#txtLiuyan_City').focus();
       return alert("城市名称有误！");
     }
 
-    if(!data.message){
+    if (!data.message) {
       $('#txtareaLiuyan_content').focus();
       return alert("留言内容有误！");
     }
 
-    $.ajax(url, {
+    $.ajax({
+      url: config.api.user.liuyan,
       data,
       method: 'POST',
       dataType: 'json',

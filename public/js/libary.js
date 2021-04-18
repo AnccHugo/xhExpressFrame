@@ -2,9 +2,7 @@ $(function () {
   $.ajax({
     method: 'post',
     url: config.api.product.getCells,
-    xhrFields: {
-      withCredentials: true
-    },
+    xhrFields: { withCredentials: true },
     success: function (data) {
       if (data.success && data.data) {
         GeneralProduct(data.data);
@@ -93,8 +91,8 @@ function BlankToCellDetail() {
     return alert('暂无该产品详情页');
   }
 
-  const detailPageUrl =  "/product/detail?cellUuid=" + cellUuid;
-  
+  const detailPageUrl = "/product/detail?cellUuid=" + cellUuid;
+
   window.open(detailPageUrl, '_blank');
 
 }
