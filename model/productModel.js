@@ -51,42 +51,67 @@ class ProductModel extends BaseModel {
   constructor(props) { super(props); }
 
   GetCells = async ({ keyword = null }) => {
+    const getResult = _GetCellsJson();
+    if (!getResult || !getResult.success) {
+      return this.errorReturn(getResult.msg || "", getResult.data || {});
+    }
+
+    if (!keyword) { return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} }); }
+
+    let cellList = null;
     const regMatch = new RegExp(keyword, 'g');
     const strReplace = `<strong>${keyword}</strong>`;
 
-    const getResult = _GetCellsJson();
-    if (getResult && getResult.success && getResult.data) {
-      let cells = Object.assign({}, getResult.data);
-      cells.data = [];
+    if (getResult.data && getResult.data.data) { cellList = getResult.data.data; }
 
-      console.log(keyword);
-      if (keyword) {
-        for (let [index, value] of Object.entries(getResult.data.data)) {
-          let isMatch = false;
+    if (cellList && cellList.length) {
+      let nameEN_idx = 2, nameCN_idx = 1, product_Idx = 4;
+      let cells = { title: getResult.data.title, data: [] };
 
-          for (let [idx, val] of Object.entries(value)) {
-            if (!val) { break; }
+      let cellNameEN = [];
+      let cellNameCN = [];
+      let cellProduct = [];
+      let cellElse = [];
+      for (let [cellIndex, cellItem] of Object.entries(cellList)) {
+        cellItem[nameEN_idx] = new String(cellItem[nameEN_idx]);
+        cellItem[nameCN_idx] = new String(cellItem[nameCN_idx]);
+        cellItem[product_Idx] = new String(cellItem[product_Idx]);
 
-            val = new String(val);
-
-            value[idx] = val.replace(regMatch, strReplace);
-
-            if (val && regMatch.test(val) && !isMatch) {
-              isMatch = true;
-            }
-          }
-
-          if (isMatch) { cells.data.push(value); }
+        if (regMatch.test(cellItem[nameEN_idx])) {
+          cellItem[nameEN_idx] = cellItem[nameEN_idx].replace(regMatch, strReplace);
+          cellNameEN.push(cellItem);
+          continue;
         }
+
+        if (regMatch.test(cellItem[nameCN_idx])) {
+          cellItem[nameCN_idx] = cellItem[nameCN_idx].replace(regMatch, strReplace);
+          cellNameCN.push(cellItem);
+          continue;
+        }
+
+        if (regMatch.test(cellItem[product_Idx])) {
+          cellItem[product_Idx] = cellItem[product_Idx].replace(regMatch, strReplace);
+          cellProduct.push(cellItem);
+          continue;
+        }
+
+        if (regMatch.test(cellItem[cellIndex])) {
+          cellItem[cellIndex] = cellItem[cellIndex].replace(regMatch, strReplace);
+          cellElse.push(cellItem);
+          continue;
+        }
+      }
+
+      cells.data = [...cellNameEN, ...cellNameCN, ...cellProduct, ...cellElse];
+
+      if (cells.data && cells.data.length) {
 
         return this.successReturn(getResult.msg || '', { cellsJson: cells || {} });
       }
-
-      return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} });
     }
 
     return this.errorReturn(getResult.msg || 'CELLS_GET_FAIL', getResult.data || {});
-  };
+  }
 
   GetCell = async ({ cellUuid }) => {
     if (!cellUuid) {
@@ -95,7 +120,8 @@ class ProductModel extends BaseModel {
 
     const getResult = _GetCellsJson();
     if (getResult && getResult.success && getResult.data && getResult.data.title && getResult.data.data) {
-      let titleIndex = null, cell = { title: getResult.data.title };
+      let titleIndex = null,
+        cell = { title: getResult.data.title };
 
       for (const [index, value] of getResult.data.title.entries()) {
         if (value === 'uuid') { titleIndex = index; break; }
