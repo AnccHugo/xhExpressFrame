@@ -3,7 +3,7 @@ const config = {
   siteTitle: "浙江美森细胞科技有限公司",
 
   // 各种开关
-  isRelease: false,
+  isRelease: true,
 
   // 服务端
   apiServerProtocol: (window.location.protocol + "//") || 'http://',
@@ -112,7 +112,13 @@ const config = {
     },
     product: {
       getCells: "/product/getCells",
-      getCell: "/product/getCell",
+      getNaiyaozhu: "/product/getNaiyaozhu",
+      getYuandaixibao: "/product/getYuandaixibao",
+      getCas9: "/product/getCas9",
+      getCRISPRi: "/product/getCRISPRi",
+      getLuc1: "/product/getLuc1",
+      getLuc2: "/product/getLuc2",
+      getCell: '/product/getCell',
     }
   },
 

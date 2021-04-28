@@ -53,9 +53,14 @@ content .libary .tabs_common {
     padding: 5px;
 }
 
+.tab_body .tab_list li a.cur {
+  color: red;
+}
+
 .tab_body .tab_list li a.label:hover {
     color: red;
 }
+
 
 /*  */
 
@@ -126,7 +131,8 @@ content .libary {
     color: #333;
     font-size: 16px;
     font-weight: bolder;
-    text-align: center;
+    text-align: left;
+    /* text-align: center; */
     background: #f7f7f7;
     cursor: default;
 }

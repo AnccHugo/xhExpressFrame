@@ -44,8 +44,8 @@ function _RenderDetaiil(cell) {
     for (const [index, value] of cell.title.entries()) {
       if (value === "终端价" && !userInfo) { continue; }
 
-      $cellTbody.append('<tr id="cell_' + value + '_' + index + '"></tr>')
-      const $cellTr = $('#cell_' + value + '_' + index);
+      $cellTbody.append('<tr id="cell_' + index + '"></tr>')
+      const $cellTr = $('#cell_' + index);
 
       $cellTr.append('<td>' + value + '</td>');
       $cellTr.append('<td>' + cell.data[index] + '</td>');

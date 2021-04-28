@@ -142,7 +142,7 @@ class ProductModel extends BaseModel {
   };
 
   GetCRISPRi = async ({ keyword = null }) => {
-    const getResult = _GetDataJson(_InitCRISPRiTable);
+    const getResult = _GetDataJson(__PRODUCT_CRISPRi_JSON_PATH__);
     if (!getResult || !getResult.success) {
       return this.errorReturn(getResult.msg || "", getResult.data || {});
     }
@@ -333,6 +333,7 @@ function _InitCas9Table(productTable) {
 function _InitCRISPRiTable(productTable) {
   let sheet = null;
   sheet = productTable.map(ele => {
+    console.log(ele.name);
     if (ele.name === 'CRISPRi') { return ele; }
   })[4];
 
