@@ -54,7 +54,7 @@ class ProductModel extends BaseModel {
     if (!keyword) { return this.successReturn(getResult.msg || '', { cellsJson: getResult.data || {} }); }
 
     let cellList = null;
-    const regMatch = new RegExp(keyword, 'g');
+    const regMatch = new RegExp(keyword, "gi");
     const strReplace = `<strong>${keyword}</strong>`;
 
     if (getResult.data && getResult.data.data) { cellList = getResult.data.data; }
@@ -67,31 +67,65 @@ class ProductModel extends BaseModel {
       let cellNameCN = [];
       let cellProduct = [];
       let cellElse = [];
+      let matchResult = [];
+      let replaceStr = "";
       for (let [cellIndex, cellItem] of Object.entries(cellList)) {
         cellItem[nameEN_idx] = new String(cellItem[nameEN_idx]);
         cellItem[nameCN_idx] = new String(cellItem[nameCN_idx]);
         cellItem[product_Idx] = new String(cellItem[product_Idx]);
 
         if (regMatch.test(cellItem[nameEN_idx])) {
-          cellItem[nameEN_idx] = cellItem[nameEN_idx].replace(regMatch, strReplace);
+          matchResult = cellItem[nameEN_idx].match(regMatch);
+
+          if (!matchResult) { continue; }
+
+          for (let word of matchResult) {
+            replaceStr = `<strong>${word}</strong>`
+            cellItem[nameEN_idx] = cellItem[nameEN_idx].replace(regMatch, replaceStr);
+          }
+
           cellNameEN.push(cellItem);
           continue;
         }
 
         if (regMatch.test(cellItem[nameCN_idx])) {
-          cellItem[nameCN_idx] = cellItem[nameCN_idx].replace(regMatch, strReplace);
+          matchResult = cellItem[nameEN_idx].match(regMatch);
+
+          if (!matchResult) { continue; }
+
+          for (let word of matchResult) {
+            replaceStr = `<strong>${word}</strong>`
+            cellItem[nameCN_idx] = cellItem[nameCN_idx].replace(regMatch, replaceStr);
+          }
+
           cellNameCN.push(cellItem);
           continue;
         }
 
         if (regMatch.test(cellItem[product_Idx])) {
-          cellItem[product_Idx] = cellItem[product_Idx].replace(regMatch, strReplace);
+          matchResult = cellItem[nameEN_idx].match(regMatch);
+
+          if (!matchResult) { continue; }
+
+          for (let word of matchResult) {
+            replaceStr = `<strong>${word}</strong>`
+            cellItem[product_Idx] = cellItem[product_Idx].replace(regMatch, replaceStr);
+          }
+
           cellProduct.push(cellItem);
           continue;
         }
 
         if (regMatch.test(cellItem[cellIndex])) {
-          cellItem[cellIndex] = cellItem[cellIndex].replace(regMatch, strReplace);
+          matchResult = cellItem[nameEN_idx].match(regMatch);
+
+          if (!matchResult) { continue; }
+
+          for (let word of matchResult) {
+            replaceStr = `<strong>${word}</strong>`
+            cellItem[cellIndex] = cellItem[cellIndex].replace(regMatch, replaceStr);
+          }
+
           cellElse.push(cellItem);
           continue;
         }
